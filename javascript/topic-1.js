@@ -1,3 +1,4 @@
+//create a new array
 function createarray() {
     let food1 = document.getElementById("food1").value;
     let food2 = document.getElementById("food2").value;
@@ -9,6 +10,7 @@ function createarray() {
     return foodarray;
 }
 
+//loop the array and make it easier to read
 function looparray(foodarray) {
     var foodarray = createarray();
     for (i = 0; i < foodarray.length; i++) { 
@@ -16,6 +18,7 @@ function looparray(foodarray) {
     }
 }
 
+//add to the array and sort it alphabetically
 function addtoarray() {
     var foodarray = createarray();
     var newfood1 = document.getElementById("food6").value;

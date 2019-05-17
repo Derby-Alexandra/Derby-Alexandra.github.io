@@ -1,8 +1,3 @@
-//function createarray() {
-//    var foodarray = [document.getElementById("food1").value, document.getElementById("food2").value, document.getElementById("food3").value, document.getElementById("food4").value, document.getElementById("food5").value];
-//    document.getElementById("displayarray").innerHTML = foodarray;
-//}
-
 function createarray() {
     let food1 = document.getElementById("food1").value;
     let food2 = document.getElementById("food2").value;
@@ -17,9 +12,18 @@ function createarray() {
 function looparray(foodarray) {
     var foodarray = createarray();
     for (i = 0; i < foodarray.length; i++) { 
-      document.getElementById("prettydisplay").innerHTML += foodarray[i] + " ";
-  
-        
+        document.getElementById("prettydisplay").innerHTML += foodarray[i] + "<br>";
+    }
 }
+
+function addtoarray() {
+    var foodarray = createarray();
+    var newfood1 = document.getElementById("food6").value;
+    var newfood2 = document.getElementById("food7").value;
+    foodarray.push(newfood1, newfood2);
+    foodarray.sort();
+    for (i = 0; i < foodarray.length; i++) { 
+        document.getElementById("updatedarray").innerHTML += foodarray[i] + "<br>";
+    }
 }
 

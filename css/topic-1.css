@@ -78,3 +78,12 @@ div {
     padding: 5px;
     
 }
+
+#prettydisplay, #updatedarray {
+    font-family: 'Bungee Shade', cursive;
+    font-size: 2em;
+}
+
+button {
+    margin: 10px;
+}

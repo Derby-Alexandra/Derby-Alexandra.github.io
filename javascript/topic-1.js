@@ -13,7 +13,7 @@ function createarray() {
 //loop the array and make it easier to read
 function looparray() {
     var foodarray = createarray();
-    let prettydisplaystring;
+    let prettydisplaystring = "";
     for (let i = 0; i < foodarray.length; i++) {
         prettydisplaystring += foodarray[i] + "<br>";
     }

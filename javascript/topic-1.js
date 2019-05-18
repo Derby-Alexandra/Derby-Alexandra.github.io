@@ -11,7 +11,7 @@ function createarray() {
 }
 
 //loop the array and make it easier to read
-function looparray(foodarray) {
+function looparray() {
     var foodarray = createarray();
     for (i = 0; i < foodarray.length; i++) { 
         document.getElementById("prettydisplay").innerHTML += foodarray[i] + "<br>";

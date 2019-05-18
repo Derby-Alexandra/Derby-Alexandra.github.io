@@ -6,8 +6,13 @@ function createarray() {
     let food4 = document.getElementById("food4").value;
     let food5 = document.getElementById("food5").value;
     let foodarray = [food1, food2, food3, food4, food5];
-    document.getElementById("displayarray").innerHTML = foodarray;
     return foodarray;
+}
+
+//calls the createarray function and displays it for the user
+function getanddisplayarray() {
+    var foodarray = createarray();
+    document.getElementById("displayarray").innerHTML = foodarray;
 }
 
 //loop the array and make it easier to read

@@ -13,9 +13,11 @@ function createarray() {
 //loop the array and make it easier to read
 function looparray() {
     var foodarray = createarray();
-    for (i = 0; i < foodarray.length; i++) { 
-        document.getElementById("prettydisplay").innerHTML += foodarray[i] + "<br>";
+    let prettydisplaystring;
+    for (let i = 0; i < foodarray.length; i++) {
+        prettydisplaystring += foodarray[i] + "<br>";
     }
+    document.getElementById("prettydisplay").innerHTML = prettydisplaystring;
 }
 
 //add to the array and sort it alphabetically

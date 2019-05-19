@@ -25,7 +25,7 @@ function looparray() {
     document.getElementById("prettydisplay").innerHTML = prettydisplaystring;
 }
 
-//add to the array and sort it alphabetically
+//add to the array, sort it alphabetically, and display shopping message to the user
 function addtoarray() {
     var foodarray = createarray();
     var newfood1 = document.getElementById("food6").value;
@@ -35,5 +35,6 @@ function addtoarray() {
     for (i = 0; i < foodarray.length; i++) { 
         document.getElementById("updatedarray").innerHTML += foodarray[i] + "<br>";
     }
+    document.getElementById("shoppingtext").innerHTML = "Now we're ready to go shopping!";
 }
 

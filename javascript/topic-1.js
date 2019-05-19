@@ -15,7 +15,7 @@ function getanddisplayarray() {
     document.getElementById("displayarray").innerHTML = foodarray;
 }
 
-//loop the array and make it easier to read
+//loop the array and make it easier to read by adding line breaks
 function looparray() {
     var foodarray = createarray();
     let prettydisplaystring = "";
@@ -35,6 +35,6 @@ function addtoarray() {
     for (i = 0; i < foodarray.length; i++) { 
         document.getElementById("updatedarray").innerHTML += foodarray[i] + "<br>";
     }
-    document.getElementById("shoppingtext").innerHTML = "Now we're ready to go shopping!";
+    document.getElementById("shoppingtext").innerHTML = "<br>" + "Now we're ready to go shopping!";
 }
 

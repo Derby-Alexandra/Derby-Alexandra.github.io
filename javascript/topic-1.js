@@ -28,8 +28,8 @@ function looparray() {
 //add to the array, sort it alphabetically, and display shopping message to the user
 function addtoarray() {
     var foodarray = createarray();
-    var newfood1 = document.getElementById("food6").value;
-    var newfood2 = document.getElementById("food7").value;
+    let newfood1 = document.getElementById("food6").value;
+    let newfood2 = document.getElementById("food7").value;
     foodarray.push(newfood1, newfood2);
     foodarray.sort();
     for (i = 0; i < foodarray.length; i++) { 

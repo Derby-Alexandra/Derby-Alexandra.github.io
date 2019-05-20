@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CIT 261 Topic #2 | Alexandra Derby | BYU-Idaho</title>
     <meta name="description" content="cit261 topic #2">
-    <script type="text/javascript" src="../javascript/topic-.js"></script>
+    <script type="text/javascript" src="../javascript/topic-2.js"></script>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/topic-2.css">
 </head>
@@ -18,8 +18,54 @@
         <h3>Javascript Object Creation Functions, Inheritance, Properties, Methods</h3>
         
         <div class="center">
+            Let's create a Person object and display your first and last name using a method. Enter your information below:
+            <br>
+            First Name: <input type="text" id="firstname">
+            <br>
+            Last Name: <input type="text" id="lastname">
+            <br>
+            Age: <input type="text" id="age">
+            <br>
+            <button type="button" onclick="displaynewperson()">Create Person</button>
+            <p id="newpersondisplay"></p>
         </div>
-        
+        <div class="center">
+            Let's create a new student profile for you using the Person object previously created. Enter the additional information below:
+            <br>
+            School Name: <input type="text" id="schoolname">
+            <br>
+            Favourite Class: <input type="text" id="favouriteclass">
+            <br>
+            Predicted Graduation Year: <input type="text" id="graduationyear">
+            <br>
+            <button type="button" onclick="displaynewprofile()">Create Profile</button>
+            <p id="newprofiledisplay"></p>
+        </div>
+        <div>
+            Let's create a brand new profile using the Profile object constructor which inherits from the Person object constructor. Enter your information below:
+            <br>
+            First Name: <input type="text" id="profilefirstname">
+            <br>
+            Last Name: <input type="text" id="profilelastname">
+            <br>
+            Age: <input type="text" id="profileage">
+            <br>
+            School Name: <input type="text" id="profileschoolname">
+            <br>
+            Favourite Class: <input type="text" id="profilefavouriteclass">
+            <br>
+            Predicted Graduation Year: <input type="text" id="profilegraduationyear">
+            <br>
+            <button type="button" onclick="displaypersonprofile()">Create Profile</button>
+            <p id="newpersonprofiledisplay"></p>
+        </div>
+        <div class="center">
+            Let's create a new method that displays the school name and graduation year by accessing the Profile.prototype. Click the button below:
+            <br>
+            <button type="button" onclick="displayprototype()">Use Method</button>
+            <p id="displayprototype"></p>
+            
+        </div>
     </main>
     <footer>
         <p>

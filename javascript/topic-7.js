@@ -1,11 +1,11 @@
-var imagechanger = 'p';
-function changeimage() {
+var image_tracker = 'f';
+function change(){
     var image = document.getElementbyId('pizzaburger');
-    if (imagechanger == 'p') {
+    if (image_tracker == 'f') {
         image.src = '../images/pizzaimage.png';
-        imagechanger = 'b';
+        image_tracker = 't';
     } else {
         image.src = '../images/burgerimage.png';
-        imagechanger = 'p';
+        image_tracker = 'f';
     }
 }

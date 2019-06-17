@@ -1,6 +1,6 @@
 var image_tracker = 'f';
 function change(){
-    var image = document.getElementbyId('pizzaburger');
+    var image = document.getElementById('pizzaburger');
     if (image_tracker == 'f') {
         image.src = '../images/pizzaimage.png';
         image_tracker = 't';

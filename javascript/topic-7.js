@@ -1,11 +1,15 @@
-var image_tracker = 'f';
-function change(){
+// toggle between 3 different images with a mouse click
+var imagechanger = 'pizza';
+function changeimage(){
     var image = document.getElementById('pizzaburger');
-    if (image_tracker == 'f') {
+    if (imagechanger == 'pizza') {
         image.src = '../images/pizzaimage.png';
-        image_tracker = 't';
-    } else {
+        imagechanger = 'burger';
+    } else if (imagechanger == 'burger') {
         image.src = '../images/burgerimage.png';
-        image_tracker = 'f';
+        imagechanger = 'hotdog';
+      } else if (imagechanger == 'hotdog') {
+        image.src = '../images/hotdogimage.png';
+        imagechanger = 'pizza';
     }
 }

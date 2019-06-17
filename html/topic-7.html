@@ -17,21 +17,17 @@
         <h2>Topic #7</h2>
         <h3>Manipulating CSS Class Properties with JavaScript</h3>
         <div class="center">
-            <p>Click on each of the elements (headers and paragraphs below) to change classes using JavaScript:</p>
+            <p class="parachange">Click on each of the elements (header and paragraph below) to change the CSS using JavaScript:</p>
             <br>
-            <h4 id="firstheader" onclick="changefirstheader()">First Header</h4>
-            <p id="firstparagraph" onclick="changefirstparagraph()">First Paragraph</p>
+            <h4 class="headerchange" id="firstheader" onclick="changefirstheader()">First Header</h4>
+            <p class="parachange" id="firstparagraph" onclick="changefirstparagraph()">First Paragraph</p>
             <br>
-            <h4 id="secondheader" onlick="changesecondheader()">Second Header</h4>
-            <p id="secondparagraph" onclick="changesecondparagraph()">Second Paragraph</p>
+            <h4 class="headerchange" id="pchange" onclick="changeparagraphs()">Click on me to change the font color of all elements with class names "parachange" and "headerchange"</h4>
             <br>
-            <p>In addition to using JavaScript to manipulate CSS classes we can also use it to manipulate HTML elements like images. Instead of finding the class, we find the ID. Click on the image below to toggle between a slice of pizza, a burger and fries, and a hotdog:</p>
+            <p class="parachange">In addition to using JavaScript to manipulate CSS, we can also use it to manipulate HTML elements like images. Click on the image below to toggle between a slice of pizza, a burger and fries, and a hotdog:</p>
             <br>
             <img src="../images/pizzaimage.png" id="pizzaburger" alt="food image" width="50%" onclick="changeimage()">
         </div>
-        
-
-       
     </main>
     <footer>
         <p>

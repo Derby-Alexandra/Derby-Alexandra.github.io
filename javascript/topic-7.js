@@ -16,10 +16,23 @@ function changeimage() {
 
 // change the color, size, and font of the first header
 function changefirstheader() {
-        document.getElementById("firstheader").classList.toggle("change1");
+    document.getElementById("firstheader").classList.toggle("change1");
 }
 
+// change the font, size, margin, padding, and border of the first paragraph
 function changefirstparagraph() {
-        document.getElementById("firstparagraph").classList.toggle("change2");
+    document.getElementById("firstparagraph").classList.toggle("change2");
 
+}
+
+// change the font color of all elements with class name "parachange" and "headerchange"
+function changeparagraphs(){
+    var parachange1 = document.getElementsByClassName('parachange');
+    for(i=0; i<parachange1.length; i++) {
+        parachange1[i].style.color = '#BDFFFD';
+        }
+    var headerchange1 = document.getElementsByClassName('headerchange');
+    for(i=0; i<headerchange1.length; i++) {
+        headerchange1[i].style.color = '#5E6973';
+        }   
 }

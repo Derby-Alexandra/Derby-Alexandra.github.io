@@ -73,3 +73,21 @@ div {
 button {
     margin: 10px;
 }
+
+/*topic 7 additions*/
+
+
+#firstheader.change1 {
+    color: #CACF85;
+    font-family: 'Bungee Shade', cursive;
+    font-size: 35px;
+}
+
+#firstparagraph.change2 {
+    border: 5px solid #5E6973;
+    font-size: 30px;
+    font-family: 'Bungee Shade', cursive;
+    margin: 10px;
+    padding: 10px;
+    
+}

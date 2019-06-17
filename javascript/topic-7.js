@@ -1,6 +1,6 @@
 // toggle between 3 different images with a mouse click
 var imagechanger = 'pizza';
-function changeimage(){
+function changeimage() {
     var image = document.getElementById('pizzaburger');
     if (imagechanger == 'pizza') {
         image.src = '../images/pizzaimage.png';
@@ -12,4 +12,14 @@ function changeimage(){
         image.src = '../images/hotdogimage.png';
         imagechanger = 'pizza';
     }
+}
+
+// change the color, size, and font of the first header
+function changefirstheader() {
+        document.getElementById("firstheader").classList.toggle("change1");
+}
+
+function changefirstparagraph() {
+        document.getElementById("firstparagraph").classList.toggle("change2");
+
 }

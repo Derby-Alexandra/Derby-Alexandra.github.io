@@ -100,7 +100,7 @@ ajaxrequest.onload = function() {
         try {
             var responseobject = JSON.parse(this.responseText);
 //            console.log(responseobject);
-//            section 1, answer 2
+//            section 2, answer 1
             document.getElementById("tvanswer1").innerHTML = responseobject.quiz.tv.q1.answer + "<br><br>";                    
         } catch (e) {
             console.warn('there was an error with the JSON. Could not parse');
@@ -123,7 +123,7 @@ ajaxrequest.onload = function() {
         try {
             var responseobject = JSON.parse(this.responseText);
 //            console.log(responseobject);
-//            section 1, answer 2
+//            section 2, answer 2
             document.getElementById("tvanswer2").innerHTML = responseobject.quiz.tv.q2.answer + "<br><br>";                    
         } catch (e) {
             console.warn('there was an error with the JSON. Could not parse');

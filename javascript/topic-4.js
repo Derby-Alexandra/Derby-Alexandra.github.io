@@ -1,4 +1,4 @@
-// retrieve information from a JSON file online using AJAX and return as a JavaScript object
+// retrieve information from a JSON file online using AJAX and return as a JavaScript object to display questions
 function getquestions() {
 var ajaxrequest = new XMLHttpRequest();
 
@@ -45,6 +45,7 @@ ajaxrequest.send();
 
 }
 
+// function to reveal answer 1 using an AJAX request
 function getanswer1() {
 var ajaxrequest = new XMLHttpRequest();
 
@@ -67,6 +68,7 @@ ajaxrequest.open('get', 'https://my-json-server.typicode.com/Derby-Alexandra/cit
 ajaxrequest.send();
 }
 
+// function to reveal answer 2 using an AJAX request
 function getanswer2() {
 var ajaxrequest = new XMLHttpRequest();
 
@@ -89,6 +91,7 @@ ajaxrequest.open('get', 'https://my-json-server.typicode.com/Derby-Alexandra/cit
 ajaxrequest.send();
 }
 
+// function to reveal answer 3 using an AJAX request
 function getanswer3() {
 var ajaxrequest = new XMLHttpRequest();
 
@@ -111,6 +114,7 @@ ajaxrequest.open('get', 'https://my-json-server.typicode.com/Derby-Alexandra/cit
 ajaxrequest.send();
 }
 
+// function to reveal answer 1 using an AJAX request
 function getanswer4() {
 var ajaxrequest = new XMLHttpRequest();
 

@@ -14,12 +14,12 @@
         <h1><a href="../index.html">Alexandra Derby</a></h1>
     </header>
     <main>
-        <h2>Topic #4</h2>
+<h2>Topic #4</h2>
         <h3>AJAX Requesting a JSON File</h3>
                 
         <div class="center">
             <h4>Movie and TV Quiz</h4>
-            <p onclick="getquestions()">Click this paragraph to reveal the questions to my 2 part movie and tv quiz using an AJAX request. Once you think you know the answer, click the buttons below to reveal the actual answers.</p>
+            <p onclick="getquestions()">Click this paragraph to reveal the questions to my 2 part movie and tv quiz using a JSON object retrieved on page load through an AJAX request. Once you think you know the answer, click the buttons below to reveal the actual answers.</p>
 
             <br>
             <h4 id="">Section 1: Movies</h4>
@@ -30,7 +30,8 @@
                 <li class="leftalign" id="movie3"></li>
                 <li class="leftalign" id="movie4"></li>
             </ol>
-            <button onclick="getanswer1()">Click to reveal answer</button>
+<!--            <button onclick="getanswer1()">Click to reveal answer</button>-->
+            <button onclick="getanswer('movieanswer1', 'q1', 'movies')">Click to reveal answer</button>
             <p id="movieanswer1"></p>
             
             <p class="leftalign">Question 2: <span id="mainstar1"></span></p>
@@ -40,9 +41,8 @@
                 <li class="leftalign" id="actor3"></li>
                 <li class="leftalign" id="actor4"></li>
             </ol>
-            <button onclick="getanswer2()">Click to reveal answer</button>
+            <button onclick="getanswer('movieanswer2', 'q2', 'movies')">Click to reveal answer</button>
             <p id="movieanswer2"></p>
-            <br>
             <h4 id="">Section 2: TV</h4>
             <p class="leftalign">Question 1: <span id="favoritetvshow"></span></p>
             <ol>
@@ -51,7 +51,7 @@
                 <li class="leftalign" id ="show3"></li>
                 <li class="leftalign" id ="show4"></li>
             </ol>
-            <button onclick="getanswer3()">Click to reveal answer</button>
+            <button onclick="getanswer('tvanswer1', 'q1', 'tv')">Click to reveal answer</button>
             <p id="tvanswer1"></p>
             
             <p class="leftalign">Question 2: <span id="mainstar2"></span></p>
@@ -61,7 +61,7 @@
                 <li class="leftalign" id ="tvactor3"></li>
                 <li class="leftalign" id ="tvactor4"></li>
             </ol>
-            <button onclick="getanswer4()">Click to reveal answer</button>
+            <button onclick="getanswer('tvanswer2', 'q2', 'tv')">Click to reveal answer</button>
             <p id="tvanswer2"></p>
             
         </div>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">   
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CIT 261 Topic #3 | Alexandra Derby | BYU-Idaho</title>
+    <meta name="description" content="cit261 topic #3">
+    <script type="text/javascript" src="../javascript/topic-3.js"></script>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/topic-3.css">
+</head>
+<body>
+    <header>
+        <h1><a href="../index.html">Alexandra Derby</a></h1>
+    </header>
+    <main>
+        <h2>Topics #3 and #5</h2>
+        <h3>JSON Parse and Stringify and Local Storage</h3>
+        
+        <div class="center">
+            Let's start by creating a new object containing a grocery list. List 5 of your favorite foods below:
+            <br>
+            1. <input type="text" id="food1">
+            <br>
+            2. <input type="text" id="food2">
+            <br>
+            3. <input type="text" id="food3">
+            <br>
+            4. <input type="text" id="food4">
+            <br>
+            5. <input type="text" id="food5">
+            <br>
+            <button type="button" onclick="displaygrocerylist()">Create Grocery List</button>
+            <p id="grocerydisplay"></p>
+            <br>
+            <p>Let's say you were to accidentally refresh your page and you lost your grocery list. This wouldn't be too concerning with a list this small, but if you had entered in 25+ items, you might be a little ticked off. Luckily, we've stored your list in your local storage. All you need to do to retrieve your lost list is click the button below. Refresh your page and try it out!</p>
+            
+            <button type="button" onclick="retrievepreviouslist()">Retrieve List</button>
+            <p id="retrievedlistdisplay"></p>
+        </div>
+       
+    </main>
+    <footer>
+        <p>
+            &copy; 2019 | Alexandra Derby | Canada | <a href="http://www.byui.edu/online">BYU Idaho Online Learning</a>
+        </p>
+    </footer>
+</body>    
+</html>

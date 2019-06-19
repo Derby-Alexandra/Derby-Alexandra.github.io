@@ -1,7 +1,7 @@
 var quizjson = {};
 getquiz();
 
-
+// 
 function getquiz() {
 var ajaxrequest = new XMLHttpRequest();
 
@@ -10,7 +10,6 @@ ajaxrequest.onload = function() {
         try {
             var responseobject = JSON.parse(this.responseText);
 //            console.log(responseobject);
-//            section 1, answer 1
             quizjson = responseobject;
         } catch (e) {
             console.warn('there was an error with the JSON. Could not parse');
@@ -56,75 +55,3 @@ function getquestions() {
 function getanswer(elementid, questionnumber, media) {
     document.getElementById(elementid).innerHTML = quizjson.quiz[media][questionnumber].answer + "<br><br>"; 
 }
-
-
-//
-//
-//// function to reveal answer 2 using an AJAX request
-//function getanswer2() {
-//var ajaxrequest = new XMLHttpRequest();
-//
-//ajaxrequest.onload = function() {
-//    if (this.status === 200) {
-//        try {
-//            var responseobject = JSON.parse(this.responseText);
-////            console.log(responseobject);
-////            section 1, answer 2
-//            document.getElementById("movieanswer2").innerHTML = responseobject.quiz.movies.q2.answer;                    
-//        } catch (e) {
-//            console.warn('there was an error with the JSON. Could not parse');
-//        }
-//    } else {
-//        console.warn('Did not receive 200 OK from response');
-//    }
-//};
-//
-//ajaxrequest.open('get', 'https://my-json-server.typicode.com/Derby-Alexandra/cit261/db');
-//ajaxrequest.send();
-//}
-//
-//// function to reveal answer 3 using an AJAX request
-//function getanswer3() {
-//var ajaxrequest = new XMLHttpRequest();
-//
-//ajaxrequest.onload = function() {
-//    if (this.status === 200) {
-//        try {
-//            var responseobject = JSON.parse(this.responseText);
-////            console.log(responseobject);
-////            section 2, answer 1
-//            document.getElementById("tvanswer1").innerHTML = responseobject.quiz.tv.q1.answer + "<br><br>";                    
-//        } catch (e) {
-//            console.warn('there was an error with the JSON. Could not parse');
-//        }
-//    } else {
-//        console.warn('Did not receive 200 OK from response');
-//    }
-//};
-//
-//ajaxrequest.open('get', 'https://my-json-server.typicode.com/Derby-Alexandra/cit261/db');
-//ajaxrequest.send();
-//}
-//
-//// function to reveal answer 1 using an AJAX request
-//function getanswer4() {
-//var ajaxrequest = new XMLHttpRequest();
-//
-//ajaxrequest.onload = function() {
-//    if (this.status === 200) {
-//        try {
-//            var responseobject = JSON.parse(this.responseText);
-////            console.log(responseobject);
-////            section 2, answer 2
-//            document.getElementById("tvanswer2").innerHTML = responseobject.quiz.tv.q2.answer + "<br><br>";                    
-//        } catch (e) {
-//            console.warn('there was an error with the JSON. Could not parse');
-//        }
-//    } else {
-//        console.warn('Did not receive 200 OK from response');
-//    }
-//};
-//
-//ajaxrequest.open('get', 'https://my-json-server.typicode.com/Derby-Alexandra/cit261/db');
-//ajaxrequest.send();
-//}

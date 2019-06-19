@@ -1,7 +1,9 @@
+// JSON object 
 var quizjson = {};
+// call getquiz function
 getquiz();
 
-// 
+// retrieves data from my JSON file using an AJAX request and returns it as an object
 function getquiz() {
 var ajaxrequest = new XMLHttpRequest();
 
@@ -52,6 +54,7 @@ function getquestions() {
     document.getElementById("tvactor4").innerHTML = quizjson.quiz.tv.q2.options[3];
 }
 
+// gets all 4 answers to the quiz questions and reveals them using onclicks
 function getanswer(elementid, questionnumber, media) {
     document.getElementById(elementid).innerHTML = quizjson.quiz[media][questionnumber].answer + "<br><br>"; 
 }

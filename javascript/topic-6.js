@@ -43,7 +43,6 @@ var child = document.getElementById('input1');
 var newinput1 = document.createElement('input') ;
     newinput1.type = "text";
     newinput1.placeholder = "Enter additional name";
-    newinput1.id = "name";
 //parent.appendChild(newinput1);
 parent.insertBefore(newinput1, child.nextSibling);
     

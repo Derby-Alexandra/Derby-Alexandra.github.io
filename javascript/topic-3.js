@@ -34,6 +34,3 @@ function retrievepreviouslist() {
     var list = JSON.parse(retrievedlist);
     document.getElementById("retrievedlistdisplay").innerHTML = list.food1 + "<br>" + list.food2 + "<br>" + list.food3 + "<br>" + list.food4 + "<br>" + list.food5;
 }
-
-
-

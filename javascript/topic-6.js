@@ -1,3 +1,4 @@
+//Replace all the current headers and paragraphs with new ones using JS
 function addelements() {
     var parent = document.getElementById("div1");
     var child = document.getElementById("p1");
@@ -34,7 +35,7 @@ function addelements() {
     var header2 = document.createElement("h4");
     var headernode2 = document.createTextNode("New Header 2 Created with JavaScript");
     header2.appendChild(headernode2);
-parent.replaceChild(header2,headerchild2);
+    parent.replaceChild(header2,headerchild2);
 }
 
 //counter variable for updating the input id for each new input in insertuserinput() function

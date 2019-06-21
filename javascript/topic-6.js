@@ -39,10 +39,12 @@ parent.replaceChild(header2,headerchild2);
 
 function insertuserinput() {
 var parent = document.getElementById('div2');
+var child = document.getElementById('input1');
 var newinput1 = document.createElement('input') ;
-var input = document.getElementById('input1');
+    newinput1.type = "text";
+    newinput1.placeholder = "Enter additional name";
+    newinput1.id = "name";
 //parent.appendChild(newinput1);
-parent.insertBefore(newinput1, input.nextSibling);
+parent.insertBefore(newinput1, child.nextSibling);
     
 }
-

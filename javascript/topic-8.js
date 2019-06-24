@@ -4,7 +4,7 @@ function qmousedown1() {
 
 function submit1() {
     var answer = document.getElementById("q1").value;
-    if (answer == 8) {
+    if (answer == 16) {
         document.getElementById("correct1");
         correct1.style.opacity = "1";
         correct1.style.transition = "opacity 2.5s";

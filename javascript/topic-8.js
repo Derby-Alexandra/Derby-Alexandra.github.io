@@ -1,9 +1,10 @@
-//changes background color of input and type to number (in case you have entered a number wrong previously) on mouse down
+//changes background color of input and type to number (in case you have entered a wrong answer previously, in which case the type would have been changed to text to display "wrong") on mouse down
 function qmousedown1() {
     document.getElementById("q1").style.backgroundColor = "#BDFFFD";
     q1.type = "number";
 }
 
+//checks to see if the answer #1 is correct. if it is, it displays the div with a css transition. if it's wrong, it changes the background to red, the input type to text, and displays the word "wrong"
 function submit1() {
     var answer = document.getElementById("q1").value;
     if (answer == 16) {
@@ -17,11 +18,13 @@ function submit1() {
     }   
 }
 
+//changes background color of input and type to number (in case you have entered a wrong answer previously, in which case the type would have been changed to text to display "wrong") on mouse down
 function qmousedown2() {
     document.getElementById("q2").style.backgroundColor = "#BDFFFD";
     q2.type = "number";
 }
 
+//checks to see if the answer #2 is correct. if it is, it displays the div with a css transition. if it's wrong, it changes the background to red, the input type to text, and displays the word "wrong"
 function submit2() {
     var answer = document.getElementById("q2").value;
     if (answer == 36) {
@@ -35,11 +38,13 @@ function submit2() {
     }   
 }
 
+//changes background color of input and type to number (in case you have entered a wrong answer previously, in which case the type would have been changed to text to display "wrong") on mouse down
 function qmousedown3() {
     document.getElementById("q3").style.backgroundColor = "#BDFFFD";
     q3.type = "number";
 }
 
+//checks to see if the answer #3 is correct. if it is, it displays the div with a css transition. if it's wrong, it changes the background to red, the input type to text, and displays the word "wrong"
 function submit3() {
     var answer = document.getElementById("q3").value;
     if (answer == 10) {
@@ -53,11 +58,13 @@ function submit3() {
     }   
 }
 
+//changes background color of input and type to number (in case you have entered a wrong answer previously, in which case the type would have been changed to text to display "wrong") on mouse down
 function qmousedown4() {
     document.getElementById("q4").style.backgroundColor = "#BDFFFD";
     q4.type = "number";
 }
 
+//checks to see if the answer #4 is correct. if it is, it displays the div with a css transition. if it's wrong, it changes the background to red, the input type to text, and displays the word "wrong"
 function submit4() {
     var answer = document.getElementById("q4").value;
     if (answer == 8) {

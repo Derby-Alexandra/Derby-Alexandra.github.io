@@ -76,6 +76,13 @@ button {
 
 /*topic 8 additions*/
 
-#q1, #q2, #q3, #q4 {
-    transition: opacity 3s;
+.questioncorrect {
+    opacity: 0;
+    width: 100px;
+    height: 35px;
+    background: #5E6973;
+    margin: 0 auto;
+    transition: opacity 2s;
+    color: #BDFFFD;
 }
+

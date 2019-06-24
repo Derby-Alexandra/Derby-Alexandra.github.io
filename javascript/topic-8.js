@@ -3,14 +3,24 @@ function qmousedown1() {
 }
 
 function submit1() {
+    var correct = "";
     var answer = document.getElementById("q1").value;
     if (answer == 8) {
         document.getElementById("q1").style.backgroundColor = "green";
+        document.getElementById("correct1");
+        correct1.style.opacity = "1";
     } else {
         document.getElementById("q1").style.backgroundColor = "red";
+        var correct = "no";
     }   
 }
-
+//
+//function submit1animation() {
+//    submit1();
+//    if (background = "yes") {
+//        document.getElementById("correct1").
+//    
+//}
 
 function qmousedown2() {
     document.getElementById("q2").style.backgroundColor = "#BDFFFD";

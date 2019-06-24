@@ -86,3 +86,9 @@ button {
     color: #BDFFFD;
 }
 
+.nicetext {
+    font-size: 2em;
+/*    color: #BDFFFD;*/
+    font-family: 'Bungee Shade', cursive;
+}
+

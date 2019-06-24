@@ -1,5 +1,7 @@
+//changes background color of input and type to number (in case you have entered a number wrong previously) on mouse down
 function qmousedown1() {
     document.getElementById("q1").style.backgroundColor = "#BDFFFD";
+    q1.type = "number";
 }
 
 function submit1() {
@@ -10,11 +12,14 @@ function submit1() {
         correct1.style.transition = "opacity 2.5s";
     } else {
         document.getElementById("q1").style.backgroundColor = "red";
+        q1.type = "text";
+        q1.value = "wrong";
     }   
 }
 
 function qmousedown2() {
     document.getElementById("q2").style.backgroundColor = "#BDFFFD";
+    q2.type = "number";
 }
 
 function submit2() {
@@ -25,11 +30,14 @@ function submit2() {
         correct2.style.transition = "opacity 2.5s";
     } else {
         document.getElementById("q2").style.backgroundColor = "red";
+        q2.type = "text";
+        q2.value = "wrong";
     }   
 }
 
 function qmousedown3() {
     document.getElementById("q3").style.backgroundColor = "#BDFFFD";
+    q3.type = "number";
 }
 
 function submit3() {
@@ -40,11 +48,14 @@ function submit3() {
         correct3.style.transition = "opacity 2.5s";
     } else {
         document.getElementById("q3").style.backgroundColor = "red";
+        q3.type = "text";
+        q3.value = "wrong";
     }   
 }
 
 function qmousedown4() {
     document.getElementById("q4").style.backgroundColor = "#BDFFFD";
+    q4.type = "number";
 }
 
 function submit4() {
@@ -55,5 +66,39 @@ function submit4() {
         correct4.style.transition = "opacity 2.5s";
     } else {
         document.getElementById("q4").style.backgroundColor = "red";
+        q4.type = "text";
+        q4.value = "wrong";
     }   
+}
+
+//mouse over and out for answer 1
+function nicetextmouseover() {
+    document.getElementById("1correct").style.color= "#BDFFFD";
+}
+function nicetextmouseout() {
+    document.getElementById("1correct").style.color= "#5E6973";
+}
+
+//mouse over and out for answer 2
+function nicetextmouseover2() {
+    document.getElementById("2correct").style.color= "#BDFFFD";
+}
+function nicetextmouseout2() {
+    document.getElementById("2correct").style.color= "#5E6973";
+}
+
+//mouse over and out for answer 3
+function nicetextmouseover3() {
+    document.getElementById("3correct").style.color= "#BDFFFD";
+}
+function nicetextmouseout3() {
+    document.getElementById("3correct").style.color= "#5E6973";
+}
+
+//mouse over and out for answer 4
+function nicetextmouseover4() {
+    document.getElementById("4correct").style.color= "#BDFFFD";
+}
+function nicetextmouseout4() {
+    document.getElementById("4correct").style.color= "#5E6973";
 }

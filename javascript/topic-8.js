@@ -3,8 +3,8 @@ function qmousedown1() {
 }
 
 function submit1() {
-    var firstname = document.getElementById("q1").value;
-    if (firstname == 8) {
+    var answer = document.getElementById("q1").value;
+    if (answer == 8) {
         document.getElementById("q1").style.backgroundColor = "green";
     } else {
         document.getElementById("q1").style.backgroundColor = "red";
@@ -16,10 +16,37 @@ function qmousedown2() {
     document.getElementById("q2").style.backgroundColor = "#BDFFFD";
 }
 
+function submit2() {
+    var answer = document.getElementById("q2").value;
+    if (answer == 36) {
+        document.getElementById("q2").style.backgroundColor = "green";
+    } else {
+        document.getElementById("q2").style.backgroundColor = "red";
+    }   
+}
+
 function qmousedown3() {
     document.getElementById("q3").style.backgroundColor = "#BDFFFD";
 }
 
+function submit3() {
+    var answer = document.getElementById("q3").value;
+    if (answer == 10) {
+        document.getElementById("q3").style.backgroundColor = "green";
+    } else {
+        document.getElementById("q3").style.backgroundColor = "red";
+    }   
+}
+
 function qmousedown4() {
     document.getElementById("q4").style.backgroundColor = "#BDFFFD";
+}
+
+function submit4() {
+    var answer = document.getElementById("q4").value;
+    if (answer == 8) {
+        document.getElementById("q4").style.backgroundColor = "green";
+    } else {
+        document.getElementById("q4").style.backgroundColor = "red";
+    }   
 }

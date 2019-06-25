@@ -82,13 +82,16 @@ button {
     height: 45px;
     background: #5E6973;
     margin: 0 auto;
-/*    transition: opacity 2s;*/
     color: #BDFFFD;
 }
 
 .nicetext {
     font-size: 2em;
-/*    color: #BDFFFD;*/
-    font-family: 'Bungee Shade', cursive;
+    font-family: 'Bungee Shade', cursive;  
 }
+
+.spin {
+    transition: 1s;
+}
+
 

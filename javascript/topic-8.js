@@ -83,7 +83,7 @@ function nicetextmouseover() {
     document.getElementById("1correct").style.color= "#BDFFFD";
 }
 function nicetextmouseout() {
-    document.getElementById("1correct").style.color= "#5E6973";
+    document.getElementById("1correct").style.color= "#5E6973";    
 }
 
 //mouse over and out for answer 2

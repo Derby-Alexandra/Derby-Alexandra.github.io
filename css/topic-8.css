@@ -94,4 +94,33 @@ button {
     transition: 1s;
 }
 
+/*slide animation*/
+
+#square_div {
+    position: absolute;
+    width: 40%;
+    height: 80px;
+    transform: translateX(-200%);
+    font-family: 'Bungee Shade', cursive;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+.slide_in {
+    animation: slide_in 1s forwards;
+}
+
+.slide_out {
+    animation: slide_out 1s forwards;
+}
+
+@keyframes slide_in {
+    100% { transform: translateX(0%); }
+}
+
+@keyframes slide_out {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-200%); }
+}
+
 

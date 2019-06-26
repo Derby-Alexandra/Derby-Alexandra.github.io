@@ -14,7 +14,7 @@ function submit1() {
     } else {
         document.getElementById("q1").style.backgroundColor = "red";
         q1.type = "text";
-        q1.value = "wrong";
+        q1.value = "try again";
     }   
 }
 
@@ -34,7 +34,7 @@ function submit2() {
     } else {
         document.getElementById("q2").style.backgroundColor = "red";
         q2.type = "text";
-        q2.value = "wrong";
+        q2.value = "try again";
     }   
 }
 
@@ -54,7 +54,7 @@ function submit3() {
     } else {
         document.getElementById("q3").style.backgroundColor = "red";
         q3.type = "text";
-        q3.value = "wrong";
+        q3.value = "try again";
     }   
 }
 
@@ -74,7 +74,7 @@ function submit4() {
     } else {
         document.getElementById("q4").style.backgroundColor = "red";
         q4.type = "text";
-        q4.value = "wrong";
+        q4.value = "try again";
     }   
 }
 
@@ -109,3 +109,18 @@ function nicetextmouseover4() {
 function nicetextmouseout4() {
     document.getElementById("4correct").style.color= "#5E6973";
 }
+
+//congratulations function
+function congratulations() {
+    
+}
+
+function toggle() {
+    var square = document.getElementById('square_div');
+    var toggle_button = document.getElementById('toggle_button');
+    var square_is_visible = square.classList.contains('slide_in');
+    square.setAttribute('class', square_is_visible ? 'slide_out' : 'slide_in');
+    toggle_button.innerHTML = square_is_visible ? 'Show' : 'Hide'
+}
+
+

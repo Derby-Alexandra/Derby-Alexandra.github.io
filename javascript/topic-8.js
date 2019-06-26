@@ -113,9 +113,26 @@ function nicetextmouseout4() {
 //congratulations function
 function congratulations() {
     document.getElementById("congratid").innerHTML = "<br> Congratulations! <br>";
-        congratid.style.opacity = "1";
-        congratid.style.transform = "rotate(720deg) scale(2)";
+    congratid.style.opacity = "1";
+    congratid.style.transform = "rotate(720deg) scale(2)";
 }
 
+//goodjob function
+function goodjob() {
+    document.getElementById("congratid").innerHTML = "<br> Good job! <br>";
+    congratid.style.opacity = "1";
+    congratid.style.transform = "rotate(360deg) scale(2)";
+}
 
+//goodjob function
+function keeppracticing() {
+    document.getElementById("congratid").innerHTML = "<br> Keep practicing! <br>";
+    congratid.style.opacity = "1";
+    congratid.style.transform = "rotate(-360deg) scale(2)";
+}
 
+function betterluck() {
+    document.getElementById("congratid").innerHTML = "<br> Better luck next time <br>";
+    congratid.style.opacity = "1";
+    congratid.style.transform = "rotate(-1080deg) scale(2)";
+}

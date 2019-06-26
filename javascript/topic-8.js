@@ -114,15 +114,8 @@ function nicetextmouseout4() {
 function congratulations() {
     document.getElementById("congratid").innerHTML = "<br> Congratulations! <br>";
         congratid.style.opacity = "1";
-        congratid.style.transform = "rotate(360deg) scale(2)";
+        congratid.style.transform = "rotate(720deg) scale(2)";
 }
 
-//function toggle() {
-//    var square = document.getElementById('square_div');
-//    var toggle_button = document.getElementById('toggle_button');
-//    var square_is_visible = square.classList.contains('slide_in');
-//    square.setAttribute('class', square_is_visible ? 'slide_out' : 'slide_in');
-//    toggle_button.innerHTML = square_is_visible ? 'Show' : 'Hide'
-//}
 
 

@@ -109,7 +109,7 @@ button {
 }
 
 .congratclass {
-    opacity: 0.2;
-    transition: 1.5s;
+    opacity: 0;
+    transition: 2s;
     font-weight: bold;
 }

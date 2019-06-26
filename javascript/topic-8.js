@@ -106,19 +106,24 @@ function nicetextmouseout() {
 //checks which number you've selected and plays a different animation for each one 
 function answerresponse() {
     if (event.target.id == "1correct") {
-    document.getElementById("congratid").innerHTML = "<br> Better luck next time! <br>";
+    document.getElementById("addlinebreaks").innerHTML = "<br><br>";    
+    document.getElementById("congratid").innerHTML = "Better luck next time! <br>";
     congratid.style.opacity = "1";
     congratid.style.transform = "rotate(-1080deg) scale(2)";
+    congratid.style.padding = "0";
     } else if (event.target.id == "2correct") {
-            document.getElementById("congratid").innerHTML = "<br> Keep practicing! <br>";
+            document.getElementById("addlinebreaks").innerHTML = "<br><br>";    
+            document.getElementById("congratid").innerHTML = "Keep practicing! <br>";
             congratid.style.opacity = "1";
             congratid.style.transform = "rotate(-360deg) scale(2)";
         } else if (event.target.id == "3correct") {
-                document.getElementById("congratid").innerHTML = "<br> Good job! <br>";
+                document.getElementById("addlinebreaks").innerHTML = "<br><br>";    
+                document.getElementById("congratid").innerHTML = "Good job! <br>";
                 congratid.style.opacity = "1";
                 congratid.style.transform = "rotate(360deg) scale(2)";
             } else if (event.target.id == "4correct") {
-                    document.getElementById("congratid").innerHTML = "<br> Congratulations! <br>";
+                    document.getElementById("addlinebreaks").innerHTML = "<br><br>";    
+                    document.getElementById("congratid").innerHTML = "Congratulations! <br>";
                     congratid.style.opacity = "1";
                     congratid.style.transform = "rotate(720deg) scale(2)";
                 }

@@ -39,21 +39,16 @@
             <button type="button" onclick="submit4()">Check Answer</button>
             <div id="correct4" class="questioncorrect">CORRECT! </div>
             <br>
-            <div class="center">
+            <div id="answerdiv" class="center">
                 <h4>How many answers did you get right?</h4>
                 <br>
                 <p class="nicetext">
                     <span id="1correct" class="spin" onmouseover="nicetextmouseover()" onmouseout="nicetextmouseout()">1</span>, 
                     <span id="2correct" class="spin" onmouseover="nicetextmouseover2()" onmouseout="nicetextmouseout2()">2</span>, 
                     <span id="3correct" class="spin" onmouseover="nicetextmouseover3()" onmouseout="nicetextmouseout3()">3</span>, or 
-                    <span id="4correct" class="spin" onmouseover="nicetextmouseover4()" onmouseout="nicetextmouseout4()" onclick="toggle()">4</span>?
+                    <span id="4correct" class="spin" onmouseover="nicetextmouseover4()" onmouseout="nicetextmouseout4()" onmousedown="congratulations()">4</span>?
                 </p>
-                <br>
-            </div>
-            <div class="center">
-<!--                <button id="toggle_button" onclick="toggle()"> Hide </button>--><br>
-                <p id="square_div" class="slidein">Congratulations!</p>
-                <br>
+                <p id="congratid" class="congratclass"></p>
                 <br>
             </div>
         </div>

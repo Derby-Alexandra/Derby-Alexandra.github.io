@@ -94,33 +94,22 @@ button {
     transition: 1s;
 }
 
-/*slide animation*/
-
-#square_div {
-    position: absolute;
-    width: 40%;
-    height: 80px;
-    transform: translateX(-200%);
-    font-family: 'Bungee Shade', cursive;
-    font-size: 40px;
+.questioncorrect {
+    opacity: 0;
+    width: 106px;
+    height: 45px;
+    background: #5E6973;
+    margin: 0 auto;
     color: #FFFFFF;
 }
 
-.slide_in {
-    animation: slide_in 1s forwards;
+.nicetext {
+    font-size: 2em;
+    font-family: 'Bungee Shade', cursive;  
 }
 
-.slide_out {
-    animation: slide_out 1s forwards;
+.congratclass {
+    opacity: 0.2;
+    transition: 1.5s;
+    font-weight: bold;
 }
-
-@keyframes slide_in {
-    100% { transform: translateX(0%); }
-}
-
-@keyframes slide_out {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-200%); }
-}
-
-

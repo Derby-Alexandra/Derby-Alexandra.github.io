@@ -110,7 +110,6 @@ function answerresponse() {
     document.getElementById("congratid").innerHTML = "Better luck next time! <br>";
     congratid.style.opacity = "1";
     congratid.style.transform = "rotate(-1080deg) scale(2)";
-    congratid.style.padding = "0";
     } else if (event.target.id == "2correct") {
             document.getElementById("addlinebreaks").innerHTML = "<br><br>";    
             document.getElementById("congratid").innerHTML = "Keep practicing! <br>";
@@ -125,6 +124,6 @@ function answerresponse() {
                     document.getElementById("addlinebreaks").innerHTML = "<br><br>";    
                     document.getElementById("congratid").innerHTML = "Congratulations! <br>";
                     congratid.style.opacity = "1";
-                    congratid.style.transform = "rotate(720deg) scale(2)";
+                    congratid.style.transform = "rotate(1080deg) scale(2)";
                 }
 }

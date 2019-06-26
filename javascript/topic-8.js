@@ -103,6 +103,7 @@ function nicetextmouseout() {
                 }
 }
 
+//checks which number you've selected and plays a different animation for each one 
 function answerresponse() {
     if (event.target.id == "1correct") {
     document.getElementById("congratid").innerHTML = "<br> Better luck next time! <br>";

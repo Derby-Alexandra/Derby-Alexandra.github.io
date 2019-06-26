@@ -1,7 +1,23 @@
-//changes background color of input and type to number (in case you have entered a wrong answer previously, in which case the type would have been changed to text to display "wrong") on mouse down
+function onloadpagefunction() {
+  alert("Welcome to my math test page. Grab a pen and paper and get ready to do some math! Click ok when you're ready to proceed.");
+}
+
+
+//checks the id and changes background color of input and type to number (in case you have entered a wrong answer previously, in which case the type would have been changed to text to display "try again") on mouse down
 function qmousedown1() {
+    if (event.target.id == "q1") {
     document.getElementById("q1").style.backgroundColor = "#BDFFFD";
     q1.type = "number";
+        } else if (event.target.id == "q2") {
+            document.getElementById("q2").style.backgroundColor = "#BDFFFD";
+            q2.type = "number";
+            } else if (event.target.id == "q3") {
+                document.getElementById("q3").style.backgroundColor = "#BDFFFD";
+                q3.type = "number";
+                } else if (event.target.id == "q4") {
+                    document.getElementById("q4").style.backgroundColor = "#BDFFFD";
+                    q4.type = "number";
+                    }
 }
 
 //checks to see if the answer #1 is correct. if it is, it displays the div with a css transition. if it's wrong, it changes the background to red, the input type to text, and displays the word "wrong"
@@ -18,11 +34,6 @@ function submit1() {
     }   
 }
 
-//changes background color of input and type to number (in case you have entered a wrong answer previously, in which case the type would have been changed to text to display "wrong") on mouse down
-function qmousedown2() {
-    document.getElementById("q2").style.backgroundColor = "#BDFFFD";
-    q2.type = "number";
-}
 
 //checks to see if the answer #2 is correct. if it is, it displays the div with a css transition. if it's wrong, it changes the background to red, the input type to text, and displays the word "wrong"
 function submit2() {
@@ -36,12 +47,6 @@ function submit2() {
         q2.type = "text";
         q2.value = "try again";
     }   
-}
-
-//changes background color of input and type to number (in case you have entered a wrong answer previously, in which case the type would have been changed to text to display "wrong") on mouse down
-function qmousedown3() {
-    document.getElementById("q3").style.backgroundColor = "#BDFFFD";
-    q3.type = "number";
 }
 
 //checks to see if the answer #3 is correct. if it is, it displays the div with a css transition. if it's wrong, it changes the background to red, the input type to text, and displays the word "wrong"
@@ -58,12 +63,6 @@ function submit3() {
     }   
 }
 
-//changes background color of input and type to number (in case you have entered a wrong answer previously, in which case the type would have been changed to text to display "wrong") on mouse down
-function qmousedown4() {
-    document.getElementById("q4").style.backgroundColor = "#BDFFFD";
-    q4.type = "number";
-}
-
 //checks to see if the answer #4 is correct. if it is, it displays the div with a css transition. if it's wrong, it changes the background to red, the input type to text, and displays the word "wrong"
 function submit4() {
     var answer = document.getElementById("q4").value;
@@ -78,61 +77,48 @@ function submit4() {
     }   
 }
 
-//mouse over and out for answer 1
+//mouse over animation effect (opacity transition)
 function nicetextmouseover() {
+    if (event.target.id == "1correct") {
     document.getElementById("1correct").style.color= "#BDFFFD";
+    } else if (event.target.id == "2correct") {
+        document.getElementById("2correct").style.color= "#BDFFFD";
+        } else if (event.target.id == "3correct") {
+                document.getElementById("3correct").style.color= "#BDFFFD";
+            } else if (event.target.id == "4correct") {
+                    document.getElementById("4correct").style.color= "#BDFFFD";
+                }
 }
+
+//mouse out animation effect (opacity transition)
 function nicetextmouseout() {
-    document.getElementById("1correct").style.color= "#5E6973";    
+    if (event.target.id == "1correct") {
+    document.getElementById("1correct").style.color= "#5E6973";
+    } else if (event.target.id == "2correct") {
+        document.getElementById("2correct").style.color= "#5E6973";
+        } else if (event.target.id == "3correct") {
+                document.getElementById("3correct").style.color= "#5E6973";
+            } else if (event.target.id == "4correct") {
+                    document.getElementById("4correct").style.color= "#5E6973";
+                }
 }
 
-//mouse over and out for answer 2
-function nicetextmouseover2() {
-    document.getElementById("2correct").style.color= "#BDFFFD";
-}
-function nicetextmouseout2() {
-    document.getElementById("2correct").style.color= "#5E6973";
-}
-
-//mouse over and out for answer 3
-function nicetextmouseover3() {
-    document.getElementById("3correct").style.color= "#BDFFFD";
-}
-function nicetextmouseout3() {
-    document.getElementById("3correct").style.color= "#5E6973";
-}
-
-//mouse over and out for answer 4
-function nicetextmouseover4() {
-    document.getElementById("4correct").style.color= "#BDFFFD";
-}
-function nicetextmouseout4() {
-    document.getElementById("4correct").style.color= "#5E6973";
-}
-
-//congratulations function
-function congratulations() {
-    document.getElementById("congratid").innerHTML = "<br> Congratulations! <br>";
-    congratid.style.opacity = "1";
-    congratid.style.transform = "rotate(720deg) scale(2)";
-}
-
-//goodjob function
-function goodjob() {
-    document.getElementById("congratid").innerHTML = "<br> Good job! <br>";
-    congratid.style.opacity = "1";
-    congratid.style.transform = "rotate(360deg) scale(2)";
-}
-
-//goodjob function
-function keeppracticing() {
-    document.getElementById("congratid").innerHTML = "<br> Keep practicing! <br>";
-    congratid.style.opacity = "1";
-    congratid.style.transform = "rotate(-360deg) scale(2)";
-}
-
-function betterluck() {
-    document.getElementById("congratid").innerHTML = "<br> Better luck next time <br>";
+function answerresponse() {
+    if (event.target.id == "1correct") {
+    document.getElementById("congratid").innerHTML = "<br> Better luck next time! <br>";
     congratid.style.opacity = "1";
     congratid.style.transform = "rotate(-1080deg) scale(2)";
+    } else if (event.target.id == "2correct") {
+            document.getElementById("congratid").innerHTML = "<br> Keep practicing! <br>";
+            congratid.style.opacity = "1";
+            congratid.style.transform = "rotate(-360deg) scale(2)";
+        } else if (event.target.id == "3correct") {
+                document.getElementById("congratid").innerHTML = "<br> Good job! <br>";
+                congratid.style.opacity = "1";
+                congratid.style.transform = "rotate(360deg) scale(2)";
+            } else if (event.target.id == "4correct") {
+                    document.getElementById("congratid").innerHTML = "<br> Congratulations! <br>";
+                    congratid.style.opacity = "1";
+                    congratid.style.transform = "rotate(720deg) scale(2)";
+                }
 }

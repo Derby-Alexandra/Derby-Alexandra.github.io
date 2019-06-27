@@ -41,6 +41,4 @@ function drawcanvas() {
     ctx.moveTo(200, 150);
     ctx.fillStyle = "#FF8852";
     ctx.fill();
-    
-
 }

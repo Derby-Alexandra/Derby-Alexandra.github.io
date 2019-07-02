@@ -83,16 +83,33 @@ button {
 }
 
 #image1 {
+    transition: all 1s ease-in-out;
+
 }
 
-#image1.hover {
-    transform: scale(-2);
-        transition: all 1s ease-in-out;
+#image1:hover {
+    transform: scale(-1);
 
 }
 
 #image2 {
+    transition: all 1s ease-in-out;
+
 }
+
+#image2:hover {
+    transform: scale(-1);
+
+}
+
 #image3 {
+    transition: all 1s ease-in-out;
+
 }
+
+#image3:hover {
+    transform: scale(-1);
+
+}
+
 

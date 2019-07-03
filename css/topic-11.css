@@ -76,6 +76,59 @@ button {
 
 /*topic 11 additions*/
 
+.divanimation1 {
+    animation: backgroundtransition 15s ease infinite;
+}
+
+@keyframes backgroundtransition {
+    0%   {background-color: #6ABEA7;}
+    25%  {background-color: #BDFFFD;}
+    50%  {background-color: #DD7373;} 
+    75%  {background-color: #BDFFFD;}
+    100% {background-color: #6ABEA7;}
+}
+
+.divanimation2 {
+    position: relative;
+    animation: lateraltransition 7.5s linear infinite;
+}
+
+@keyframes lateraltransition {
+    0%   {left: 0px; transform: scale(0);}
+    25%  {left: 200px; transform: scale(.5);}
+    50%  {left: 0px; transform: scale(1);}
+    75%  {left: -200px; transform: scale(.5);}
+    100% {left: 0px; transform: scale(0);}
+}
+
+.divanimation3 {
+    animation: spintransition 3.75s ease-in-out infinite;
+}
+
+@keyframes spintransition {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(-360deg);}
+}
+
+.loadingclass {
+    font-size: 20px;
+}
+
+.loading {
+  margin: 0 auto;
+  border: 13px solid #BDFFFD;
+  border-radius: 50%;
+  border-top: 13px solid #6ABEA7;
+  border-bottom: 13px solid #DD7373;
+  width: 100px;
+  height: 100px;
+  animation: loaderspin 2s linear infinite;
+}
+
+@keyframes loaderspin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
 .menudiv {
     display: inline-block;
@@ -84,32 +137,28 @@ button {
 
 #image1 {
     transition: 3s ease-in-out;
-
 }
 
 #image1:hover {
     transform: rotate(180deg) scale(-1);
-
 }
 
 #image2 {
-    transition: all 2s ease-in-out;
-
+    transition: 2s ease-in-out;
 }
 
 #image2:hover {
     transform: scale(-1) skewX(360deg);
-
 }
 
 #image3 {
-    transition: all 1s ease-in-out;
-
+    transition: 1s ease-in-out;
 }
 
 #image3:hover {
     transform: rotateY(360deg);
-
 }
+
+
 
 

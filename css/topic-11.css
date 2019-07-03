@@ -126,8 +126,8 @@ button {
 }
 
 @keyframes loaderspin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
 }
 
 .menudiv {
@@ -158,4 +158,3 @@ button {
 #image3:hover {
     transform: rotateY(360deg);
 }
-

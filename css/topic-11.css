@@ -74,7 +74,7 @@ button {
     margin: 10px;
 }
 
-/*topic 11 additions*/
+/*topic 11/12/13 additions*/
 
 .divanimation1 {
     animation: backgroundtransition 15s ease infinite;
@@ -158,7 +158,4 @@ button {
 #image3:hover {
     transform: rotateY(360deg);
 }
-
-
-
 

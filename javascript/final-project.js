@@ -370,16 +370,16 @@ function displayhistoryquiz() {
     document.getElementById("quiztitle").innerHTML = "History Quiz";
 
     document.getElementById("q1").innerHTML = historyquiz.results[0].question;
-    document.getElementById("q1a1").innerHTML = historyquiz.results[0].incorrect_answers[0];
+    document.getElementById("q1a1").innerHTML = historyquiz.results[0].correct_answer;
     document.getElementById("q1a2").innerHTML = historyquiz.results[0].incorrect_answers[2];
     document.getElementById("q1a3").innerHTML = historyquiz.results[0].incorrect_answers[1];
-    document.getElementById("q1a4").innerHTML = historyquiz.results[0].correct_answer;
+    document.getElementById("q1a4").innerHTML = historyquiz.results[0].incorrect_answers[0];
 
     document.getElementById("q2").innerHTML = historyquiz.results[1].question;
     document.getElementById("q2a1").innerHTML = historyquiz.results[1].incorrect_answers[0];
     document.getElementById("q2a2").innerHTML = historyquiz.results[1].incorrect_answers[1];
-    document.getElementById("q2a3").innerHTML = historyquiz.results[1].correct_answer;
-    document.getElementById("q2a4").innerHTML = historyquiz.results[1].incorrect_answers[2];
+    document.getElementById("q2a3").innerHTML = historyquiz.results[1].incorrect_answers[2];
+    document.getElementById("q2a4").innerHTML = historyquiz.results[1].correct_answer;
 
     document.getElementById("q3").innerHTML = historyquiz.results[2].question;
     document.getElementById("q3a1").innerHTML = historyquiz.results[2].correct_answer;
@@ -394,9 +394,9 @@ function displayhistoryquiz() {
     document.getElementById("q4a4").innerHTML = historyquiz.results[3].incorrect_answers[2];
 
     document.getElementById("q5").innerHTML = historyquiz.results[4].question;
-    document.getElementById("q5a1").innerHTML = historyquiz.results[4].correct_answer;
+    document.getElementById("q5a1").innerHTML = historyquiz.results[4].incorrect_answers[1];
     document.getElementById("q5a2").innerHTML = historyquiz.results[4].incorrect_answers[0];
-    document.getElementById("q5a3").innerHTML = historyquiz.results[4].incorrect_answers[1];
+    document.getElementById("q5a3").innerHTML = historyquiz.results[4].correct_answer;
     document.getElementById("q5a4").innerHTML = historyquiz.results[4].incorrect_answers[2];
 
     document.getElementById("q6").innerHTML = historyquiz.results[5].question;

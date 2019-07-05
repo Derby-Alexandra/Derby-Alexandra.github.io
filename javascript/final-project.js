@@ -193,6 +193,7 @@ function generalknowledge() {
 function displaygeneralknowledgequiz() {
     generalknowledge();
     document.getElementById("generatedquiz").classList.toggle("showgeneratedquiz");
+    document.getElementById("quiztitle").innerHTML = "General Knowledge Quiz";
     
     document.getElementById("q1").innerHTML = generalknowledgequiz.results[0].question;
     document.getElementById("q1a1").innerHTML = generalknowledgequiz.results[0].incorrect_answers[0];
@@ -279,7 +280,8 @@ function scienceandnature() {
 function displayscienceandnaturequiz() {
     scienceandnature();
     document.getElementById("generatedquiz").classList.toggle("showgeneratedquiz");
-    
+    document.getElementById("quiztitle").innerHTML = "Science and Nature Quiz";
+
     document.getElementById("q1").innerHTML = scienceandnaturequiz.results[0].question;
     document.getElementById("q1a1").innerHTML = scienceandnaturequiz.results[0].incorrect_answers[0];
     document.getElementById("q1a2").innerHTML = scienceandnaturequiz.results[0].incorrect_answers[2];
@@ -365,7 +367,8 @@ function history() {
 function displayhistoryquiz() {
     history();
     document.getElementById("generatedquiz").classList.toggle("showgeneratedquiz");
-    
+    document.getElementById("quiztitle").innerHTML = "History Quiz";
+
     document.getElementById("q1").innerHTML = historyquiz.results[0].question;
     document.getElementById("q1a1").innerHTML = historyquiz.results[0].incorrect_answers[0];
     document.getElementById("q1a2").innerHTML = historyquiz.results[0].incorrect_answers[2];

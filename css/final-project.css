@@ -106,3 +106,12 @@ button {
 .centeralign {
     text-align: center;
 }
+
+#quiztitle {
+    font-size: 1.7em;
+    color: #5E6973;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: 'Bungee Shade', cursive;
+}

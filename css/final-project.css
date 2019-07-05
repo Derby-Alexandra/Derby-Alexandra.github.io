@@ -98,3 +98,11 @@ button {
 #generatedquiz.showgeneratedquiz {
     display: block;
 }
+
+.leftalign {
+    text-align: left;
+}
+
+.centeralign {
+    text-align: center;
+}

@@ -9,10 +9,12 @@ generalknowledge();
 scienceandnature();
 history();
 
+//show enter question key 
 function tenquestions() {
     document.getElementById("enterquestions").classList.toggle("show10");
 }
 
+//show quiz categories
 function generateone() {
     document.getElementById("generatequizparagraph").classList.toggle("showquizcategories");
 }

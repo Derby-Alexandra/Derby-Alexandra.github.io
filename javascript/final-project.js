@@ -1,3 +1,5 @@
+//API link: https://opentdb.com/api_config.php
+
 //Global variables
 var tenquestionskey = {};
 var generalknowledgequiz = {};

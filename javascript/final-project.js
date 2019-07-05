@@ -189,7 +189,7 @@ function generalknowledge() {
 
 //calls the generalknowledge() function and displays the questions to the user
 function displaygeneralknowledgequiz() {
-    var genquiz = generalknowledge();
+    generalknowledge();
     document.getElementById("generatedquiz").classList.toggle("showgeneratedquiz");
     
     document.getElementById("q1").innerHTML = generalknowledgequiz.results[0].question;
@@ -197,60 +197,60 @@ function displaygeneralknowledgequiz() {
     document.getElementById("q1a2").innerHTML = generalknowledgequiz.results[0].correct_answer;
     document.getElementById("q1a3").innerHTML = generalknowledgequiz.results[0].incorrect_answers[1];
     document.getElementById("q1a4").innerHTML = generalknowledgequiz.results[0].incorrect_answers[2];
-    
-       document.getElementById("q2").innerHTML = generalknowledgequiz.results[1].question;
+
+    document.getElementById("q2").innerHTML = generalknowledgequiz.results[1].question;
     document.getElementById("q2a1").innerHTML = generalknowledgequiz.results[1].incorrect_answers[0];
     document.getElementById("q2a2").innerHTML = generalknowledgequiz.results[1].incorrect_answers[1];
     document.getElementById("q2a3").innerHTML = generalknowledgequiz.results[1].correct_answer;
     document.getElementById("q2a4").innerHTML = generalknowledgequiz.results[1].incorrect_answers[2];
-    
-       document.getElementById("q3").innerHTML = generalknowledgequiz.results[2].question;
+
+    document.getElementById("q3").innerHTML = generalknowledgequiz.results[2].question;
     document.getElementById("q3a1").innerHTML = generalknowledgequiz.results[2].correct_answer;
     document.getElementById("q3a2").innerHTML = generalknowledgequiz.results[2].incorrect_answers[0];
     document.getElementById("q3a3").innerHTML = generalknowledgequiz.results[2].incorrect_answers[1];
     document.getElementById("q3a4").innerHTML = generalknowledgequiz.results[2].incorrect_answers[2];
-    
-       document.getElementById("q4").innerHTML = generalknowledgequiz.results[3].question;
+
+    document.getElementById("q4").innerHTML = generalknowledgequiz.results[3].question;
     document.getElementById("q4a1").innerHTML = generalknowledgequiz.results[3].incorrect_answers[0];
     document.getElementById("q4a2").innerHTML = generalknowledgequiz.results[3].incorrect_answers[2];
     document.getElementById("q4a3").innerHTML = generalknowledgequiz.results[3].incorrect_answers[1];
     document.getElementById("q4a4").innerHTML = generalknowledgequiz.results[3].correct_answer;
-    
-       document.getElementById("q5").innerHTML = generalknowledgequiz.results[4].question;
+
+    document.getElementById("q5").innerHTML = generalknowledgequiz.results[4].question;
     document.getElementById("q5a1").innerHTML = generalknowledgequiz.results[4].correct_answer;
     document.getElementById("q5a2").innerHTML = generalknowledgequiz.results[4].incorrect_answers[0];
     document.getElementById("q5a3").innerHTML = generalknowledgequiz.results[4].incorrect_answers[1];
     document.getElementById("q5a4").innerHTML = generalknowledgequiz.results[4].incorrect_answers[2];
-    
-       document.getElementById("q6").innerHTML = generalknowledgequiz.results[5].question;
+
+    document.getElementById("q6").innerHTML = generalknowledgequiz.results[5].question;
     document.getElementById("q6a1").innerHTML = generalknowledgequiz.results[5].incorrect_answers[0];
     document.getElementById("q6a2").innerHTML = generalknowledgequiz.results[5].correct_answer;
     document.getElementById("q6a3").innerHTML = generalknowledgequiz.results[5].incorrect_answers[1];
     document.getElementById("q6a4").innerHTML = generalknowledgequiz.results[5].incorrect_answers[2];
-    
-       document.getElementById("q7").innerHTML = generalknowledgequiz.results[6].question;
+
+    document.getElementById("q7").innerHTML = generalknowledgequiz.results[6].question;
     document.getElementById("q7a1").innerHTML = generalknowledgequiz.results[6].incorrect_answers[0];
     document.getElementById("q7a2").innerHTML = generalknowledgequiz.results[6].incorrect_answers[2];
     document.getElementById("q7a3").innerHTML = generalknowledgequiz.results[6].incorrect_answers[1];
     document.getElementById("q7a4").innerHTML = generalknowledgequiz.results[6].correct_answer;
-    
-       document.getElementById("q8").innerHTML = generalknowledgequiz.results[7].question;
+
+    document.getElementById("q8").innerHTML = generalknowledgequiz.results[7].question;
     document.getElementById("q8a1").innerHTML = generalknowledgequiz.results[7].incorrect_answers[0];
     document.getElementById("q8a2").innerHTML = generalknowledgequiz.results[7].incorrect_answers[1];
     document.getElementById("q8a3").innerHTML = generalknowledgequiz.results[7].correct_answer;
     document.getElementById("q8a4").innerHTML = generalknowledgequiz.results[7].incorrect_answers[2];
-    
-       document.getElementById("q9").innerHTML = generalknowledgequiz.results[8].question;
+
+    document.getElementById("q9").innerHTML = generalknowledgequiz.results[8].question;
     document.getElementById("q9a1").innerHTML = generalknowledgequiz.results[8].correct_answer;
     document.getElementById("q9a2").innerHTML = generalknowledgequiz.results[8].incorrect_answers[0];
     document.getElementById("q9a3").innerHTML = generalknowledgequiz.results[8].incorrect_answers[1];
     document.getElementById("q9a4").innerHTML = generalknowledgequiz.results[8].incorrect_answers[2];
-    
-       document.getElementById("q10").innerHTML = generalknowledgequiz.results[9].question;
+
+    document.getElementById("q10").innerHTML = generalknowledgequiz.results[9].question;
     document.getElementById("q10a1").innerHTML = generalknowledgequiz.results[9].incorrect_answers[0];
     document.getElementById("q10a2").innerHTML = generalknowledgequiz.results[9].correct_answer;
     document.getElementById("q10a3").innerHTML = generalknowledgequiz.results[9].incorrect_answers[1];
-    document.getElementById("q10a4").innerHTML = generalknowledgequiz.results[9].incorrect_answers[2];
+document.getElementById("q10a4").innerHTML = generalknowledgequiz.results[9].incorrect_answers[2];
 }
 
 // retrieves data from the science and nature quiz API using an AJAX request and returns it as an object
@@ -273,6 +273,72 @@ function scienceandnature() {
     ajaxrequest.send();
 }
 
+//calls the scienceandnature() function and displays the questions to the user
+function displayscienceandnaturequiz() {
+    scienceandnature();
+    document.getElementById("generatedquiz").classList.toggle("showgeneratedquiz");
+    
+    document.getElementById("q1").innerHTML = scienceandnaturequiz.results[0].question;
+    document.getElementById("q1a1").innerHTML = scienceandnaturequiz.results[0].incorrect_answers[0];
+    document.getElementById("q1a2").innerHTML = scienceandnaturequiz.results[0].incorrect_answers[2];
+    document.getElementById("q1a3").innerHTML = scienceandnaturequiz.results[0].incorrect_answers[1];
+    document.getElementById("q1a4").innerHTML = scienceandnaturequiz.results[0].correct_answer;
+
+    document.getElementById("q2").innerHTML = scienceandnaturequiz.results[1].question;
+    document.getElementById("q2a1").innerHTML = scienceandnaturequiz.results[1].incorrect_answers[0];
+    document.getElementById("q2a2").innerHTML = scienceandnaturequiz.results[1].incorrect_answers[1];
+    document.getElementById("q2a3").innerHTML = scienceandnaturequiz.results[1].correct_answer;
+    document.getElementById("q2a4").innerHTML = scienceandnaturequiz.results[1].incorrect_answers[2];
+
+    document.getElementById("q3").innerHTML = scienceandnaturequiz.results[2].question;
+    document.getElementById("q3a1").innerHTML = scienceandnaturequiz.results[2].correct_answer;
+    document.getElementById("q3a2").innerHTML = scienceandnaturequiz.results[2].incorrect_answers[0];
+    document.getElementById("q3a3").innerHTML = scienceandnaturequiz.results[2].incorrect_answers[1];
+    document.getElementById("q3a4").innerHTML = scienceandnaturequiz.results[2].incorrect_answers[2];
+
+    document.getElementById("q4").innerHTML = scienceandnaturequiz.results[3].question;
+    document.getElementById("q4a1").innerHTML = scienceandnaturequiz.results[3].incorrect_answers[0];
+    document.getElementById("q4a2").innerHTML = scienceandnaturequiz.results[3].correct_answer;
+    document.getElementById("q4a3").innerHTML = scienceandnaturequiz.results[3].incorrect_answers[1];
+    document.getElementById("q4a4").innerHTML = scienceandnaturequiz.results[3].incorrect_answers[2];
+
+    document.getElementById("q5").innerHTML = scienceandnaturequiz.results[4].question;
+    document.getElementById("q5a1").innerHTML = scienceandnaturequiz.results[4].correct_answer;
+    document.getElementById("q5a2").innerHTML = scienceandnaturequiz.results[4].incorrect_answers[0];
+    document.getElementById("q5a3").innerHTML = scienceandnaturequiz.results[4].incorrect_answers[1];
+    document.getElementById("q5a4").innerHTML = scienceandnaturequiz.results[4].incorrect_answers[2];
+
+    document.getElementById("q6").innerHTML = scienceandnaturequiz.results[5].question;
+    document.getElementById("q6a1").innerHTML = scienceandnaturequiz.results[5].incorrect_answers[0];
+    document.getElementById("q6a2").innerHTML = scienceandnaturequiz.results[5].correct_answer;
+    document.getElementById("q6a3").innerHTML = scienceandnaturequiz.results[5].incorrect_answers[1];
+    document.getElementById("q6a4").innerHTML = scienceandnaturequiz.results[5].incorrect_answers[2];
+
+    document.getElementById("q7").innerHTML = scienceandnaturequiz.results[6].question;
+    document.getElementById("q7a1").innerHTML = scienceandnaturequiz.results[6].incorrect_answers[0];
+    document.getElementById("q7a2").innerHTML = scienceandnaturequiz.results[6].incorrect_answers[2];
+    document.getElementById("q7a3").innerHTML = scienceandnaturequiz.results[6].incorrect_answers[1];
+    document.getElementById("q7a4").innerHTML = scienceandnaturequiz.results[6].correct_answer;
+
+    document.getElementById("q8").innerHTML = scienceandnaturequiz.results[7].question;
+    document.getElementById("q8a1").innerHTML = scienceandnaturequiz.results[7].incorrect_answers[0];
+    document.getElementById("q8a2").innerHTML = scienceandnaturequiz.results[7].incorrect_answers[1];
+    document.getElementById("q8a3").innerHTML = scienceandnaturequiz.results[7].correct_answer;
+    document.getElementById("q8a4").innerHTML = scienceandnaturequiz.results[7].incorrect_answers[2];
+
+    document.getElementById("q9").innerHTML = scienceandnaturequiz.results[8].question;
+    document.getElementById("q9a1").innerHTML = scienceandnaturequiz.results[8].correct_answer;
+    document.getElementById("q9a2").innerHTML = scienceandnaturequiz.results[8].incorrect_answers[0];
+    document.getElementById("q9a3").innerHTML = scienceandnaturequiz.results[8].incorrect_answers[1];
+    document.getElementById("q9a4").innerHTML = scienceandnaturequiz.results[8].incorrect_answers[2];
+
+    document.getElementById("q10").innerHTML = scienceandnaturequiz.results[9].question;
+    document.getElementById("q10a1").innerHTML = scienceandnaturequiz.results[9].incorrect_answers[0];
+    document.getElementById("q10a2").innerHTML = scienceandnaturequiz.results[9].correct_answer;
+    document.getElementById("q10a3").innerHTML = scienceandnaturequiz.results[9].incorrect_answers[1];
+    document.getElementById("q10a4").innerHTML = scienceandnaturequiz.results[9].incorrect_answers[2];
+}
+
 // retrieves data from the history quiz API using an AJAX request and returns it as an object
 function history() {
     var ajaxrequest = new XMLHttpRequest();
@@ -291,4 +357,70 @@ function history() {
     };
     ajaxrequest.open('get', 'https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple');
     ajaxrequest.send();
+}
+
+//calls the history() function and displays the questions to the user
+function displayhistoryquiz() {
+    history();
+    document.getElementById("generatedquiz").classList.toggle("showgeneratedquiz");
+    
+    document.getElementById("q1").innerHTML = historyquiz.results[0].question;
+    document.getElementById("q1a1").innerHTML = historyquiz.results[0].incorrect_answers[0];
+    document.getElementById("q1a2").innerHTML = historyquiz.results[0].incorrect_answers[2];
+    document.getElementById("q1a3").innerHTML = historyquiz.results[0].incorrect_answers[1];
+    document.getElementById("q1a4").innerHTML = historyquiz.results[0].correct_answer;
+
+    document.getElementById("q2").innerHTML = historyquiz.results[1].question;
+    document.getElementById("q2a1").innerHTML = historyquiz.results[1].incorrect_answers[0];
+    document.getElementById("q2a2").innerHTML = historyquiz.results[1].incorrect_answers[1];
+    document.getElementById("q2a3").innerHTML = historyquiz.results[1].correct_answer;
+    document.getElementById("q2a4").innerHTML = historyquiz.results[1].incorrect_answers[2];
+
+    document.getElementById("q3").innerHTML = historyquiz.results[2].question;
+    document.getElementById("q3a1").innerHTML = historyquiz.results[2].correct_answer;
+    document.getElementById("q3a2").innerHTML = historyquiz.results[2].incorrect_answers[0];
+    document.getElementById("q3a3").innerHTML = historyquiz.results[2].incorrect_answers[1];
+    document.getElementById("q3a4").innerHTML = historyquiz.results[2].incorrect_answers[2];
+
+    document.getElementById("q4").innerHTML = historyquiz.results[3].question;
+    document.getElementById("q4a1").innerHTML = historyquiz.results[3].incorrect_answers[0];
+    document.getElementById("q4a2").innerHTML = historyquiz.results[3].correct_answer;
+    document.getElementById("q4a3").innerHTML = historyquiz.results[3].incorrect_answers[1];
+    document.getElementById("q4a4").innerHTML = historyquiz.results[3].incorrect_answers[2];
+
+    document.getElementById("q5").innerHTML = historyquiz.results[4].question;
+    document.getElementById("q5a1").innerHTML = historyquiz.results[4].correct_answer;
+    document.getElementById("q5a2").innerHTML = historyquiz.results[4].incorrect_answers[0];
+    document.getElementById("q5a3").innerHTML = historyquiz.results[4].incorrect_answers[1];
+    document.getElementById("q5a4").innerHTML = historyquiz.results[4].incorrect_answers[2];
+
+    document.getElementById("q6").innerHTML = historyquiz.results[5].question;
+    document.getElementById("q6a1").innerHTML = historyquiz.results[5].incorrect_answers[0];
+    document.getElementById("q6a2").innerHTML = historyquiz.results[5].correct_answer;
+    document.getElementById("q6a3").innerHTML = historyquiz.results[5].incorrect_answers[1];
+    document.getElementById("q6a4").innerHTML = historyquiz.results[5].incorrect_answers[2];
+
+    document.getElementById("q7").innerHTML = historyquiz.results[6].question;
+    document.getElementById("q7a1").innerHTML = historyquiz.results[6].incorrect_answers[0];
+    document.getElementById("q7a2").innerHTML = historyquiz.results[6].incorrect_answers[2];
+    document.getElementById("q7a3").innerHTML = historyquiz.results[6].incorrect_answers[1];
+    document.getElementById("q7a4").innerHTML = historyquiz.results[6].correct_answer;
+
+    document.getElementById("q8").innerHTML = historyquiz.results[7].question;
+    document.getElementById("q8a1").innerHTML = historyquiz.results[7].incorrect_answers[0];
+    document.getElementById("q8a2").innerHTML = historyquiz.results[7].incorrect_answers[1];
+    document.getElementById("q8a3").innerHTML = historyquiz.results[7].correct_answer;
+    document.getElementById("q8a4").innerHTML = historyquiz.results[7].incorrect_answers[2];
+
+    document.getElementById("q9").innerHTML = historyquiz.results[8].question;
+    document.getElementById("q9a1").innerHTML = historyquiz.results[8].correct_answer;
+    document.getElementById("q9a2").innerHTML = historyquiz.results[8].incorrect_answers[0];
+    document.getElementById("q9a3").innerHTML = historyquiz.results[8].incorrect_answers[1];
+    document.getElementById("q9a4").innerHTML = historyquiz.results[8].incorrect_answers[2];
+
+    document.getElementById("q10").innerHTML = historyquiz.results[9].question;
+    document.getElementById("q10a1").innerHTML = historyquiz.results[9].incorrect_answers[0];
+    document.getElementById("q10a2").innerHTML = historyquiz.results[9].correct_answer;
+    document.getElementById("q10a3").innerHTML = historyquiz.results[9].incorrect_answers[1];
+    document.getElementById("q10a4").innerHTML = historyquiz.results[9].incorrect_answers[2];
 }

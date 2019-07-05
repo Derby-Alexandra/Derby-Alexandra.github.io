@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-US">   
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CIT 261 Final Project | Alexandra Derby | BYU-Idaho</title>
+    <meta name="description" content="cit261 topic #">
+    <script type="text/javascript" src="../javascript/final-project.js"></script>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/final-project.css">
+</head>
+<body>
+    <header>
+        <h1><a href="../index.html">QUIZLAND</a></h1>
+    </header>
+
+    <main>
+        <h2>Generate a Quiz or Create Your Own!</h2>
+        <div>
+            <p>I would like to...
+                <br>
+                <button type="button" onclick="generateone()">Generate One!</button><button type="button" onclick="tenquestions()">Create My Own!</button>
+            </p>
+            <p id="enterquestions">
+                Question 1: <br>
+                    <textarea id="question1" rows="3" cols="50"></textarea><br>
+                    a. <input type="text" id="question1a"><br>
+                    b. <input type="text" id="question1b"><br>
+                    c. <input type="text" id="question1c"><br>
+                    d. <input type="text" id="question1d"><br>
+                    answer: <input type="text" id="answer1"><br>
+                    <br>
+                 Question 2: <br>
+                    <textarea id="question2" rows="3" cols="50"></textarea><br>
+                    a. <input type="text" id="question2a"><br>
+                    b. <input type="text" id="question2b"><br>
+                    c. <input type="text" id="question2c"><br>
+                    d. <input type="text" id="question2d"><br>
+                    answer: <input type="text" id="answer2"><br>
+                    <br>
+
+                 Question 3: <br>
+                    <textarea id="question3" rows="3" cols="50"></textarea><br>
+                    a. <input type="text" id="question3a"><br>
+                    b. <input type="text" id="question3b"><br>
+                    c. <input type="text" id="question3c"><br>
+                    d. <input type="text" id="question3d"><br>
+                    answer: <input type="text" id="answer3"><br>
+                    <br>
+
+                 Question 4: <br>
+                    <textarea id="question4" rows="3" cols="50"></textarea><br>
+                    a. <input type="text" id="question4a"><br>
+                    b. <input type="text" id="question4b"><br>
+                    c. <input type="text" id="question4c"><br>
+                    d. <input type="text" id="question4d"><br>
+                    answer: <input type="text" id="answer4"><br>
+                    <br>
+
+                 Question 5: <br>
+                    <textarea id="question5" rows="3" cols="50"></textarea><br>
+                    a. <input type="text" id="question5a"><br>
+                    b. <input type="text" id="question5b"><br>
+                    c. <input type="text" id="question5c"><br>
+                    d. <input type="text" id="question5d"><br>
+                    answer: <input type="text" id="answer5"><br>
+                    <br>
+
+                 Question 6: <br>
+                    <textarea id="question6" rows="3" cols="50"></textarea><br>
+                    a. <input type="text" id="question6a"><br>
+                    b. <input type="text" id="question6b"><br>
+                    c. <input type="text" id="question6c"><br>
+                    d. <input type="text" id="question6d"><br>
+                    answer: <input type="text" id="answer6"><br>
+                    <br>
+
+                 Question 7: <br>
+                    <textarea id="question7" rows="3" cols="50"></textarea><br>
+                    a. <input type="text" id="question7a"><br>
+                    b. <input type="text" id="question7b"><br>
+                    c. <input type="text" id="question7c"><br>
+                    d. <input type="text" id="question7d"><br>
+                    answer: <input type="text" id="answer7"><br>    
+                    <br>
+
+                 Question 8: <br>
+                    <textarea id="question8" rows="3" cols="50"></textarea><br>
+                    a. <input type="text" id="question8a"><br>
+                    b. <input type="text" id="question8b"><br>
+                    c. <input type="text" id="question8c"><br>
+                    d. <input type="text" id="question8d"><br>
+                    answer: <input type="text" id="answer8"><br>
+                    <br>
+
+                 Question 9: <br>
+                    <textarea id="question9" rows="3" cols="50"></textarea><br>
+                    a. <input type="text" id="question9a"><br>
+                    b. <input type="text" id="question9b"><br>
+                    c. <input type="text" id="question9c"><br>
+                    d. <input type="text" id="question9d"><br>
+                    answer: <input type="text" id="answer9"><br>
+                    <br>
+
+                 Question 10: <br>
+                    <textarea id="question10" rows="3" cols="50"></textarea><br>
+                    a. <input type="text" id="question10a"><br>
+                    b. <input type="text" id="question10b"><br>
+                    c. <input type="text" id="question10c"><br>
+                    d. <input type="text" id="question10d"><br>
+                    answer: <input type="text" id="answer10"><br>
+                    <br>
+                
+                <button type="button" onclick="createnewquiz()">Submit Quiz Key</button>
+            </p>
+            <p id="generatequizparagraph">
+                Choose your quiz category:<br>
+                <button type="button" onclick="displaygeneralknowledgequiz()">General Knowledge</button>
+                <br>
+                <button type="button" onclick="scienceandnature()">Science and Nature</button>
+                <br>
+                <button type="button" onclick="history()">History</button>
+            </p>
+            <div id="generatedquiz">10 Question Quiz:
+                <p>Question 1: <span id="q1"></span></p>
+                <ol>
+                    <li id="q1a1"></li>
+                    <li id="q1a2"></li>
+                    <li id="q1a3"></li>
+                    <li id="q1a4"></li>
+                </ol>
+                <p>Question 2: <span id="q2"></span></p>
+                <ol>
+                    <li id="q2a1"></li>
+                    <li id="q2a2"></li>
+                    <li id="q2a3"></li>
+                    <li id="q2a4"></li>
+                </ol>
+                <p>Question 3: <span id="q3"></span></p>
+                <ol>
+                    <li id="q3a1"></li>
+                    <li id="q3a2"></li>
+                    <li id="q3a3"></li>
+                    <li id="q3a4"></li>
+                </ol>
+                <p>Question 4: <span id="q4"></span></p>
+                <ol>
+                    <li id="q4a1"></li>
+                    <li id="q4a2"></li>
+                    <li id="q4a3"></li>
+                    <li id="q4a4"></li>
+                </ol>
+                <p>Question 5: <span id="q5"></span></p>
+                <ol>
+                    <li id="q5a1"></li>
+                    <li id="q5a2"></li>
+                    <li id="q5a3"></li>
+                    <li id="q5a4"></li>
+                </ol>
+                <p>Question 6: <span id="q6"></span></p>
+                <ol>
+                    <li id="q6a1"></li>
+                    <li id="q6a2"></li>
+                    <li id="q6a3"></li>
+                    <li id="q6a4"></li>
+                </ol>
+                <p>Question 7: <span id="q7"></span></p>
+                <ol>
+                    <li id="q7a1"></li>
+                    <li id="q7a2"></li>
+                    <li id="q7a3"></li>
+                    <li id="q7a4"></li>
+                </ol>
+                <p>Question 8: <span id="q8"></span></p>
+                <ol>
+                    <li id="q8a1"></li>
+                    <li id="q8a2"></li>
+                    <li id="q8a3"></li>
+                    <li id="q8a4"></li>
+                </ol>
+                <p>Question 9: <span id="q9"></span></p>
+                <ol>
+                    <li id="q9a1"></li>
+                    <li id="q9a2"></li>
+                    <li id="q9a3"></li>
+                    <li id="q9a4"></li>
+                </ol>
+                <p>Question 10: <span id="q10"></span></p>
+                <ol>
+                    <li id="q10a1"></li>
+                    <li id="q10a2"></li>
+                    <li id="q10a3"></li>
+                    <li id="q10a4"></li>
+                </ol>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>
+            &copy; 2019 | Alexandra Derby | Canada | <a href="http://www.byui.edu/online">BYU Idaho Online Learning</a>
+        </p>
+    </footer>
+</body>    
+</html>

@@ -13,15 +13,15 @@
     <header>
         <h1><a>QUIZTRIVIALAND</a></h1>
     </header>
-
     <main>
         <h2>Test Your Knowledge with Our Trivia Quizzes or Create Your Own Quiz!</h2>
         <div>
             <p>I would like to...
                 <br>
-                <button type="button" onclick="generateone()">Test My Knowledge!</button><button type="button" onclick="tenquestions()">Create My Own Quiz!</button>
+                <button type="button" onclick="generateone()">Test My Knowledge!</button><button type="button" onclick="createquestions()">Create My Own Quiz!</button>
             </p>
             <div id="enterquestions">
+                Quiz Title: <input id="quizname" type="text"><br>
                 <div class="questiondiv">
                     Question 1: <br>
                     <textarea rows="3" cols="50"></textarea><br>
@@ -34,7 +34,7 @@
                                 <option>b</option>
                                 <option>c</option>
                                 <option>d</option>
-                            </select><br>
+                            </select>
                     <br>
                 </div>
             </div>
@@ -43,101 +43,30 @@
             <button type="button" onclick="createnewquiz()"  id="hiddenbutton2">Submit Quiz Key</button>
             <p id="generatequizparagraph">
                 Choose your quiz category:<br>
-                <button type="button" onclick="displaygeneralknowledgequiz()">General Knowledge</button>
-                <br>
-                <button type="button" onclick="displayscienceandnaturequiz()">Science and Nature</button>
-                <br>
-                <button type="button" onclick="displayhistoryquiz()">History</button>
+                <button type="button" onclick="displaythequiz('General Knowledge')">General Knowledge</button>
+                <button type="button" onclick="displaythequiz('Science and Nature')">Science and Nature</button>
+                <button type="button" onclick="displaythequiz('History')">History</button>
+                <button type="button" onclick="displaythequiz('Books')">Books</button>
+                <button type="button" onclick="displaythequiz('Geography')">Geography</button>
+                <button type="button" onclick="displaythequiz('Celebrities')">Celebrities</button>
+                <button type="button" onclick="displaythequiz('Mythology')">Mythology</button>
+                <button type="button" onclick="displaythequiz('Sports')">Sports</button>
+                <button type="button" onclick="displaythequiz('Music')">Music</button>
+                <button type="button" onclick="displaythequiz('Film')">Film</button>
+                <button type="button" onclick="displaythequiz('Video Games')">Video Games</button>
+                <button type="button" onclick="displaythequiz('Television')">Television</button>
             </p>
             <div id="generatedquiz" class="leftalign">
                 <p id="quiztitle"></p>
-                <p class="centeralign">Question 1: <br><span id="q1"></span></p>
-                <ol>
-                    <li id="q1a1"></li>
-                    <li id="q1a2"></li>
-                    <li id="q1a3"></li>
-                    <li id="q1a4"></li>
-                </ol>
-                <br>
-                <p class="centeralign">Question 2: <br><span id="q2"></span></p>
-                <ol>
-                    <li id="q2a1"></li>
-                    <li id="q2a2"></li>
-                    <li id="q2a3"></li>
-                    <li id="q2a4"></li>
-                </ol>
-                <br>
-                <p class="centeralign">Question 3: <br><span id="q3"></span></p>
-                <ol>
-                    <li id="q3a1"></li>
-                    <li id="q3a2"></li>
-                    <li id="q3a3"></li>
-                    <li id="q3a4"></li>
-                </ol>
-                <br>
-                <p class="centeralign">Question 4: <br><span id="q4"></span></p>
-                <ol>
-                    <li id="q4a1"></li>
-                    <li id="q4a2"></li>
-                    <li id="q4a3"></li>
-                    <li id="q4a4"></li>
-                </ol>
-                <br>
-                <p class="centeralign">Question 5: <br><span id="q5"></span></p>
-                <ol>
-                    <li id="q5a1"></li>
-                    <li id="q5a2"></li>
-                    <li id="q5a3"></li>
-                    <li id="q5a4"></li>
-                </ol>
-                <br>
-                <p class="centeralign">Question 6: <br><span id="q6"></span></p>
-                <ol>
-                    <li id="q6a1"></li>
-                    <li id="q6a2"></li>
-                    <li id="q6a3"></li>
-                    <li id="q6a4"></li>
-                </ol>
-                <br>
-                <p class="centeralign">Question 7: <br><span id="q7"></span></p>
-                <ol>
-                    <li id="q7a1"></li>
-                    <li id="q7a2"></li>
-                    <li id="q7a3"></li>
-                    <li id="q7a4"></li>
-                </ol>
-                <br>
-                <p class="centeralign">Question 8: <br><span id="q8"></span></p>
-                <ol>
-                    <li id="q8a1"></li>
-                    <li id="q8a2"></li>
-                    <li id="q8a3"></li>
-                    <li id="q8a4"></li>
-                </ol>
-                <br>
-                <p class="centeralign">Question 9: <br><span id="q9"></span></p>
-                <ol>
-                    <li id="q9a1"></li>
-                    <li id="q9a2"></li>
-                    <li id="q9a3"></li>
-                    <li id="q9a4"></li>
-                </ol>
-                <br>
-                <p class="centeralign">Question 10: <br><span id="q10"></span></p>
-                <ol>
-                    <li id="q10a1"></li>
-                    <li id="q10a2"></li>
-                    <li id="q10a3"></li>
-                    <li id="q10a4"></li>
-                </ol>
+                <div id="displayquiz">
+                
+                </div>
             </div>
         </div>
     </main>
     
     <footer>
-        <p>
-            &copy; 2019 | Alexandra Derby | Canada | <a href="http://www.byui.edu/online">BYU Idaho Online Learning</a>
-        </p>
+        <p>&copy; 2019 | Alexandra Derby | Canada | <a href="http://www.byui.edu/online">BYU Idaho Online Learning</a></p>
     </footer>
 </body>    
 </html>

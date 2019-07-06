@@ -79,7 +79,7 @@ button {
 #enterquestions {
     display: none;
 }
-#enterquestions.show10 {
+#enterquestions.show {
     display: block;
 }
 
@@ -132,7 +132,7 @@ button {
     font-family: 'Bungee Shade', cursive;
 }
 
-#enterquestions, .questiondiv {
+#enterquestions, .questiondiv, #generatedquiz {
     border: none;
     padding: 0;
 }

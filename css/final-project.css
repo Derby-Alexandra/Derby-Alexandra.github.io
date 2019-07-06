@@ -132,7 +132,7 @@ button {
     font-family: 'Bungee Shade', cursive;
 }
 
-#enterquestions, .questiondiv, #generatedquiz {
+#enterquestions, #allquestionsdiv, .questiondiv, #generatedquiz {
     border: none;
     padding: 0;
 }

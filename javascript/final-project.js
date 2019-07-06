@@ -38,7 +38,9 @@ function generateone() {
 }
 
 function addquestion() {
-  let questionhtml = `<div class="questiondiv">
+    let questiondiv = document.createElement('div')
+    questiondiv.classList.add('questiondiv')
+    questiondiv.innerHTML = `
         Question ${++questioncounter}: <br>
         <textarea rows="3" cols="50"></textarea><br>
         a. <input type="text"><br>
@@ -51,9 +53,8 @@ function addquestion() {
                     <option>c</option>
                     <option>d</option>
                 </select><br>
-        <br>
-    </div>`
-    document.getElementById('enterquestions').innerHTML += questionhtml;
+        <br>`
+    document.getElementById('allquestionsdiv').appendChild(questiondiv)
 }
 
 

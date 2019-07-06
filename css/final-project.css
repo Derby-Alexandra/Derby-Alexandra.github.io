@@ -99,6 +99,22 @@ button {
     display: block;
 }
 
+#hiddenbutton1 {
+    display: none;
+}
+
+#hiddenbutton2 {
+    display: none;
+}
+
+#hiddenbutton1.showbutton {
+    display: inline-block;
+}
+
+#hiddenbutton2.showbutton {
+    display: inline-block;
+}
+
 .leftalign {
     text-align: left;
 }
@@ -114,4 +130,9 @@ button {
     margin-top: 15px;
     margin-bottom: 15px;
     font-family: 'Bungee Shade', cursive;
+}
+
+#enterquestions, .questiondiv {
+    border: none;
+    padding: 0;
 }

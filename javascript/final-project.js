@@ -4,6 +4,9 @@
 var tenquestionskey = {};
 var thequiz = {};
 var questioncounter = 1;
+var quizscore = 0;
+var selectedquiz = '';
+var answeredquestions = {};
 
 //ajax function calls
 //quizapiconnection();
@@ -145,7 +148,48 @@ function createnewquiz() {
     }
     quizzes.push(quiz)
     localStorage.setItem("quizzes", JSON.stringify(quizzes));
+    displaycustomquizzes()
+    document.getElementById("enterquestions").innerHTML = `
+                Quiz Title: <input id="quizname" type="text"><br>
+                <div id="allquestionsdiv">
+                    <div class="questiondiv">
+                        Question 1: <br>
+                        <textarea rows="3" cols="50"></textarea><br>
+                        a. <input type="text"><br>
+                        b. <input type="text"><br>
+                        c. <input type="text"><br>
+                        d. <input type="text"><br>
+                        answer: <select>
+                                    <option>a</option>
+                                    <option>b</option>
+                                    <option>c</option>
+                                    <option>d</option>
+                                </select>
+                        <br>
+                    </div>
+                </div>`
+    questioncounter = 1;
+    document.getElementById("hiddenbutton1").classList.toggle("showbutton");
+    document.getElementById("hiddenbutton2").classList.toggle("showbutton");
+    document.getElementById("enterquestions").classList.toggle("show");
+    document.getElementById("generatequizparagraph").classList.toggle("showquizcategories");
 }
+
+// if there are any custom quizzes, then display the my quizzes section, and display the custom quizzes there
+function displaycustomquizzes() {
+    if (localStorage.getItem("quizzes")) {
+        let myquizzesdiv = document.getElementById('myquizzesdiv')
+        myquizzesdiv.style.display = 'block'
+        let myquizzes = document.getElementById('myquizzes')
+        let quizzes = JSON.parse(localStorage.getItem("quizzes"))
+        let htmltoadd = ''
+        quizzes.forEach(quiz => {
+            htmltoadd += `<button type="button" onclick="displaycustomquiz('${quiz.name}')">${quiz.name}</button>`
+        })
+        myquizzes.innerHTML = htmltoadd
+    }
+}
+displaycustomquizzes()
 
 // retrieves data from the general knowledge quiz API using an AJAX request and returns it as an object
 function quizapiconnection(categoryname) {
@@ -225,8 +269,56 @@ function shuffle(array) {
     return array;
 }
 
+// checkanswer will check to see if the answer the user clicked on is the correct answer. If it is the correct 
+// answer, then the text color will change to green and the current score counter will increment by one.  If it is
+// an incorrect answer, then the text color will change to red and the current score counter will not increment
+function checkanswer(quiztype, questionnumber, letter) {
+    if (!answeredquestions[questionnumber]) {
+        var resulttext = ''
+        switch(quiztype) {
+            case 'api':
+                if (thequiz.results[questionnumber].correct_answer == event.target.innerHTML) {
+                    document.getElementById('currentscore').innerHTML = ++quizscore
+                    event.target.style.color = "green"
+                    resulttext = 'Correct'
+                } else {
+                    resulttext = 'Wrong'
+                    event.target.style.color = "red"
+                }
+                if (questionnumber == thequiz.results.length - 1) {
+                    document.getElementById(`totalscore`).style.opacity = "1";
+                    document.getElementById(`totalscore`).style.transform = 'rotate(1080deg) scale(2)'
+                }
+                break;
+            case 'custom':
+                if (thequiz.questions[questionnumber].answer == letter) {
+                    document.getElementById('currentscore').innerHTML = ++quizscore
+                    event.target.style.color = "green"
+                    resulttext = 'Correct'
+                } else {
+                    resulttext = 'Wrong'
+                    event.target.style.color = "red"
+                }
+                if (questionnumber == thequiz.questions.length - 1) {
+                    document.getElementById(`totalscore`).style.opacity = "1";
+                    document.getElementById(`totalscore`).style.transform = 'rotate(1080deg) scale(2)'
+                }
+                break;
+        }
+        document.getElementById(`selectionresultdiv${questionnumber}`).style.visibility = 'visible';
+        document.getElementById(`selectionresultdiv${questionnumber}`).style.opacity = "1";
+        document.getElementById(`selectionresultdiv${questionnumber}`).style.transition = "visibility 0s, opacity 2.5s ease-in";
+        document.getElementById(`selectionresultdiv${questionnumber}`).innerHTML = resulttext
+        answeredquestions[questionnumber] = true
+    }
+
+}
+
 //calls the quizapiconnection() function and displays the questions to the user
 function displaythequiz(categoryname) {
+    quizscore = 0
+    selectedquiz = categoryname
+    answeredquestions = {}
     quizapiconnection(categoryname)
     if (!document.getElementById("generatedquiz").classList.contains("showgeneratedquiz")) {
         document.getElementById("generatedquiz").classList.add("showgeneratedquiz")
@@ -241,17 +333,87 @@ function displaythequiz(categoryname) {
     for (let i = 0; i < thequiz.results.length; i++) {
         questionhtml += `<div class="questiondiv">
                             <p class="centeralign">Question ${generatedquizcounter++}: <br><span>${thequiz.results[i].question}</span></p>
-                            <ol>`
+                            <ol type="a">`
         let allanswers = thequiz.results[i].incorrect_answers
         allanswers.push(thequiz.results[i].correct_answer)
         let shuffledanswers = shuffle(allanswers)
         
-        for (let i = 0; i < shuffledanswers.length; i++) {
-            questionhtml += `<li class="leftalign">${shuffledanswers[i]}</li>`
+        for (let j = 0; j < shuffledanswers.length; j++) {
+            questionhtml += `<li class="leftalign questionoption" onclick="checkanswer('api', ${i})">${shuffledanswers[j]}</li>`
         }
         questionhtml += `</ol>
-                        <br>
-                        </div>`
+                        <div id="selectionresultdiv${i}" class="selectionresult"></div>
+                    </div>`
     }
+    questionhtml += `<div class="scorediv"><div id="totalscore" class="scoredisplay"><span id="currentscore">0</span>/${thequiz.results.length}</div></div>`
+    quizhtml.innerHTML += questionhtml
+}
+
+function displaycustomquiz(quizname) {
+    quizscore = 0
+    selectedquiz = quizname
+    answeredquestions = {}
+    let customquizzes =  JSON.parse(localStorage.getItem("quizzes"))
+    let quiztodisplay =  {}
+    customquizzes.forEach(quiz => {
+        if (quiz.name == quizname) {
+            quiztodisplay = quiz
+            return
+        }
+    })
+    thequiz = quiztodisplay
+    
+    /*
+        Custom quizzes look like this:
+        {
+            "name": "cool quiz",
+            "questions":[
+                {
+                    "question": "what is love?",
+                    "options": {
+                        "a": "blah blah",
+                        "b": "blah blah",
+                        "c": "blah blah",
+                        "d": "blah blah"
+                    },
+                    "answer": "a"
+                },
+                {
+                    "question": "what is a rabbit?",
+                    "options": {
+                        "a": "blah blah",
+                        "b": "blah blah",
+                        "c": "blah blah",
+                        "d": "blah blah"
+                    },
+                    "answer": "c"
+                }
+            ]
+        }
+    */
+    if (!document.getElementById("generatedquiz").classList.contains("showgeneratedquiz")) {
+        document.getElementById("generatedquiz").classList.add("showgeneratedquiz")
+    }
+    document.getElementById("quiztitle").innerHTML = `${quizname} Quiz`
+    
+    var generatedquizcounter = 1
+    var quizhtml = document.getElementById('displayquiz')
+    quizhtml.innerHTML = ""
+    let questionhtml = ""
+            
+    for (let i = 0; i < quiztodisplay.questions.length; i++) {
+        questionhtml += `<div class="questiondiv">
+                            <p class="centeralign">Question ${generatedquizcounter++}: <br><span>${quiztodisplay.questions[i].question}</span></p>
+                            <ol type = "a">`
+        let answers = quiztodisplay.questions[i].options
+        questionhtml += `<li class="leftalign" onclick="checkanswer('custom', ${i}, 'a')">${answers.a}</li>`
+        questionhtml += `<li class="leftalign" onclick="checkanswer('custom', ${i}, 'b')">${answers.b}</li>`
+        questionhtml += `<li class="leftalign" onclick="checkanswer('custom', ${i}, 'c')">${answers.c}</li>`
+        questionhtml += `<li class="leftalign" onclick="checkanswer('custom', ${i}, 'd')">${answers.d}</li>`
+        questionhtml += `</ol>
+                        <div id="selectionresultdiv${i}" class="selectionresult"></div>
+                    </div>`
+    }
+    questionhtml += `<div class="scorediv"><div id="totalscore" class="scoredisplay"><span id="currentscore">0</span>/${quiztodisplay.questions.length}</div></div>`
     quizhtml.innerHTML += questionhtml
 }

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CIT 261 Final Project | Alexandra Derby | BYU-Idaho</title>
     <meta name="description" content="cit261 topic #">
-    <script type="text/javascript" src="../javascript/final-project.js"></script>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/final-project.css">
 </head>
@@ -43,8 +42,8 @@
             </div>
             <button type="button" onclick="addquestion()" id="hiddenbutton1">Add Question</button>
             <br>
-            <button type="button" onclick="createnewquiz()"  id="hiddenbutton2">Submit Quiz Key</button>
-            <p id="generatequizparagraph">
+            <button type="button" onclick="createnewquiz()"  id="hiddenbutton2">Submit Quiz</button>
+            <div id="generatequizparagraph">
                 Choose your quiz category:<br>
                 <button type="button" onclick="displaythequiz('General Knowledge')">General Knowledge</button>
                 <button type="button" onclick="displaythequiz('Science and Nature')">Science and Nature</button>
@@ -58,7 +57,11 @@
                 <button type="button" onclick="displaythequiz('Film')">Film</button>
                 <button type="button" onclick="displaythequiz('Video Games')">Video Games</button>
                 <button type="button" onclick="displaythequiz('Television')">Television</button>
-            </p>
+                <div id="myquizzesdiv">
+                    My Quizzes:
+                    <div id="myquizzes"></div>
+                </div>
+            </div>
             <div id="generatedquiz" class="leftalign">
                 <p id="quiztitle"></p>
                 <div id="displayquiz">
@@ -71,5 +74,6 @@
     <footer>
         <p>&copy; 2019 | Alexandra Derby | Canada | <a href="http://www.byui.edu/online">BYU Idaho Online Learning</a></p>
     </footer>
+    <script type="text/javascript" src="../javascript/final-project.js"></script>
 </body>    
 </html>

@@ -148,7 +148,7 @@ button {
     font-family: 'Bungee Shade', cursive;
 }
 
-#enterquestions, #allquestionsdiv, .questiondiv, #generatedquiz, #myquizzes, #myquizzesdiv, #generatequizparagraph, .scorediv {
+#enterquestions, #allquestionsdiv, .questiondiv, #generatedquiz, #myquizzes, #myquizzesdiv, #generatequizparagraph, .scorediv, #hiddenbuttons {
     border: none;
     padding: 0;
 }
@@ -195,4 +195,76 @@ button:hover {
     transition: 2s;
     font-weight: bold;
     border: none;
+}
+
+#myquizzes {
+    margin-top: 0;
+}
+
+#myquizzesdiv {
+    margin-bottom: 35px;
+}
+
+#hiddenbuttons {
+    display: none;
+}
+
+#hiddenbuttons.show {
+    display: block;
+}
+
+.clickedbutton {
+  animation: shake 0.5s;
+  animation-iteration-count: 2s;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.textanimation {
+    animation: color-change .5s ease 3;
+}
+
+@keyframes color-change {
+    0%   {color: #BDFFFD;}
+    50%  {color: #6ABEA7;}
+    100% {color: #BDFFFD;}
+}
+
+.backgroundanimation {
+    animation: backgroundtransition .5s ease 3;
+}
+
+@keyframes backgroundtransition {
+    0%   {background-color: #6ABEA7;}
+    50%  {background-color: #BDFFFD;}
+    100% {background-color: #6ABEA7;}
+}
+
+.quiztitle {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }

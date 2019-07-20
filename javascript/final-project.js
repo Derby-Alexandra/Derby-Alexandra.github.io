@@ -14,6 +14,7 @@ var answeredquestions = {};
 //show enter question key 
 function createquestions() {
     document.getElementById("enterquestions").classList.toggle("show");
+    document.getElementById("hiddenbuttons").classList.toggle("show");
     document.getElementById("hiddenbutton1").classList.toggle("showbutton");
     document.getElementById("hiddenbutton2").classList.toggle("showbutton");
     
@@ -37,6 +38,9 @@ function generateone() {
     }
     if (document.getElementById("hiddenbutton2").classList.contains("showbutton")) {
         document.getElementById("hiddenbutton2").classList.remove("showbutton")
+    }
+    if (document.getElementById("hiddenbuttons").classList.contains("show")) {
+        document.getElementById("hiddenbuttons").classList.remove("show")
     }
 }
 
@@ -277,7 +281,7 @@ function checkanswer(quiztype, questionnumber, letter) {
         var resulttext = ''
         switch(quiztype) {
             case 'api':
-                if (thequiz.results[questionnumber].correct_answer == event.target.innerHTML) {
+                if (thequiz.results[questionnumber].correct_answer == event.target.innerHTML.replace("'", "&#039;")) {
                     document.getElementById('currentscore').innerHTML = ++quizscore
                     event.target.style.color = "green"
                     resulttext = 'Correct'
@@ -319,101 +323,117 @@ function displaythequiz(categoryname) {
     quizscore = 0
     selectedquiz = categoryname
     answeredquestions = {}
-    quizapiconnection(categoryname)
-    if (!document.getElementById("generatedquiz").classList.contains("showgeneratedquiz")) {
-        document.getElementById("generatedquiz").classList.add("showgeneratedquiz")
-    }
-    document.getElementById("quiztitle").innerHTML = `${categoryname} Quiz`
-    
-    var generatedquizcounter = 1
-    var quizhtml = document.getElementById('displayquiz')
-    quizhtml.innerHTML = ""
-    let questionhtml = ""
-            
-    for (let i = 0; i < thequiz.results.length; i++) {
-        questionhtml += `<div class="questiondiv">
-                            <p class="centeralign">Question ${generatedquizcounter++}: <br><span>${thequiz.results[i].question}</span></p>
-                            <ol type="a">`
-        let allanswers = thequiz.results[i].incorrect_answers
-        allanswers.push(thequiz.results[i].correct_answer)
-        let shuffledanswers = shuffle(allanswers)
-        
-        for (let j = 0; j < shuffledanswers.length; j++) {
-            questionhtml += `<li class="leftalign questionoption" onclick="checkanswer('api', ${i})">${shuffledanswers[j]}</li>`
+    event.target.classList.add('clickedbutton')
+    event.target.addEventListener("animationend", function() {
+    event.target.classList.remove('clickedbutton')
+        quizapiconnection(categoryname)
+        if (!document.getElementById("generatedquiz").classList.contains("showgeneratedquiz")) {
+            document.getElementById("generatedquiz").classList.add("showgeneratedquiz")
         }
-        questionhtml += `</ol>
-                        <div id="selectionresultdiv${i}" class="selectionresult"></div>
-                    </div>`
-    }
-    questionhtml += `<div class="scorediv"><div id="totalscore" class="scoredisplay"><span id="currentscore">0</span>/${thequiz.results.length}</div></div>`
-    quizhtml.innerHTML += questionhtml
+        document.getElementById("quiztitle").innerHTML = `${categoryname} Quiz`
+        document.getElementById("quiztitle").classList.add('quiztitle')
+        document.getElementById("quiztitle").addEventListener("animationend", function() {
+            document.getElementById("quiztitle").classList.remove('quiztitle')
+        })
+
+        var generatedquizcounter = 1
+        var quizhtml = document.getElementById('displayquiz')
+        quizhtml.innerHTML = ""
+        let questionhtml = ""
+
+        for (let i = 0; i < thequiz.results.length; i++) {
+            questionhtml += `<div class="questiondiv">
+                                <p class="centeralign">Question ${generatedquizcounter++}: <br><span>${thequiz.results[i].question}</span></p>
+                                <ol type="a">`
+            let allanswers = thequiz.results[i].incorrect_answers
+            allanswers.push(thequiz.results[i].correct_answer)
+            let shuffledanswers = shuffle(allanswers)
+
+            for (let j = 0; j < shuffledanswers.length; j++) {
+                questionhtml += `<li class="leftalign questionoption" onclick="checkanswer('api', ${i})">${shuffledanswers[j]}</li>`
+            }
+            questionhtml += `</ol>
+                            <div id="selectionresultdiv${i}" class="selectionresult"></div>
+                        </div>`
+        }
+        questionhtml += `<div class="scorediv"><div id="totalscore" class="scoredisplay"><span id="currentscore">0</span>/${thequiz.results.length}</div></div>`
+        quizhtml.innerHTML += questionhtml
+    });
 }
 
 function displaycustomquiz(quizname) {
     quizscore = 0
     selectedquiz = quizname
     answeredquestions = {}
-    let customquizzes =  JSON.parse(localStorage.getItem("quizzes"))
-    let quiztodisplay =  {}
-    customquizzes.forEach(quiz => {
-        if (quiz.name == quizname) {
-            quiztodisplay = quiz
-            return
+    event.target.classList.add('clickedbutton')
+    event.target.addEventListener("animationend", function() {
+        event.target.classList.remove('clickedbutton')
+        let customquizzes =  JSON.parse(localStorage.getItem("quizzes"))
+        let quiztodisplay =  {}
+        document.getElementById("quiztitle").classList.add('quiztitle')
+        document.getElementById("quiztitle").addEventListener("animationend", function() {
+            document.getElementById("quiztitle").classList.remove('quiztitle')
+        })
+        customquizzes.forEach(quiz => {
+            if (quiz.name == quizname) {
+                quiztodisplay = quiz
+                return
+            }
+        })
+        thequiz = quiztodisplay
+
+        /*
+            Custom quizzes look like this:
+            {
+                "name": "cool quiz",
+                "questions":[
+                    {
+                        "question": "what is love?",
+                        "options": {
+                            "a": "blah blah",
+                            "b": "blah blah",
+                            "c": "blah blah",
+                            "d": "blah blah"
+                        },
+                        "answer": "a"
+                    },
+                    {
+                        "question": "what is a rabbit?",
+                        "options": {
+                            "a": "blah blah",
+                            "b": "blah blah",
+                            "c": "blah blah",
+                            "d": "blah blah"
+                        },
+                        "answer": "c"
+                    }
+                ]
+            }
+        */
+        if (!document.getElementById("generatedquiz").classList.contains("showgeneratedquiz")) {
+            document.getElementById("generatedquiz").classList.add("showgeneratedquiz")
         }
+        document.getElementById("quiztitle").innerHTML = `${quizname} Quiz`
+
+        var generatedquizcounter = 1
+        var quizhtml = document.getElementById('displayquiz')
+        quizhtml.innerHTML = ""
+        let questionhtml = ""
+
+        for (let i = 0; i < quiztodisplay.questions.length; i++) {
+            questionhtml += `<div class="questiondiv">
+                                <p class="centeralign">Question ${generatedquizcounter++}: <br><span>${quiztodisplay.questions[i].question}</span></p>
+                                <ol type = "a">`
+            let answers = quiztodisplay.questions[i].options
+            questionhtml += `<li class="leftalign questionoption" onclick="checkanswer('custom', ${i}, 'a')">${answers.a}</li>`
+            questionhtml += `<li class="leftalign questionoption" onclick="checkanswer('custom', ${i}, 'b')">${answers.b}</li>`
+            questionhtml += `<li class="leftalign questionoption" onclick="checkanswer('custom', ${i}, 'c')">${answers.c}</li>`
+            questionhtml += `<li class="leftalign questionoption" onclick="checkanswer('custom', ${i}, 'd')">${answers.d}</li>`
+            questionhtml += `</ol>
+                            <div id="selectionresultdiv${i}" class="selectionresult"></div>
+                        </div>`
+        }
+        questionhtml += `<div class="scorediv"><div id="totalscore" class="scoredisplay"><span id="currentscore">0</span>/${quiztodisplay.questions.length}</div></div>`
+        quizhtml.innerHTML += questionhtml
     })
-    thequiz = quiztodisplay
-    
-    /*
-        Custom quizzes look like this:
-        {
-            "name": "cool quiz",
-            "questions":[
-                {
-                    "question": "what is love?",
-                    "options": {
-                        "a": "blah blah",
-                        "b": "blah blah",
-                        "c": "blah blah",
-                        "d": "blah blah"
-                    },
-                    "answer": "a"
-                },
-                {
-                    "question": "what is a rabbit?",
-                    "options": {
-                        "a": "blah blah",
-                        "b": "blah blah",
-                        "c": "blah blah",
-                        "d": "blah blah"
-                    },
-                    "answer": "c"
-                }
-            ]
-        }
-    */
-    if (!document.getElementById("generatedquiz").classList.contains("showgeneratedquiz")) {
-        document.getElementById("generatedquiz").classList.add("showgeneratedquiz")
-    }
-    document.getElementById("quiztitle").innerHTML = `${quizname} Quiz`
-    
-    var generatedquizcounter = 1
-    var quizhtml = document.getElementById('displayquiz')
-    quizhtml.innerHTML = ""
-    let questionhtml = ""
-            
-    for (let i = 0; i < quiztodisplay.questions.length; i++) {
-        questionhtml += `<div class="questiondiv">
-                            <p class="centeralign">Question ${generatedquizcounter++}: <br><span>${quiztodisplay.questions[i].question}</span></p>
-                            <ol type = "a">`
-        let answers = quiztodisplay.questions[i].options
-        questionhtml += `<li class="leftalign" onclick="checkanswer('custom', ${i}, 'a')">${answers.a}</li>`
-        questionhtml += `<li class="leftalign" onclick="checkanswer('custom', ${i}, 'b')">${answers.b}</li>`
-        questionhtml += `<li class="leftalign" onclick="checkanswer('custom', ${i}, 'c')">${answers.c}</li>`
-        questionhtml += `<li class="leftalign" onclick="checkanswer('custom', ${i}, 'd')">${answers.d}</li>`
-        questionhtml += `</ol>
-                        <div id="selectionresultdiv${i}" class="selectionresult"></div>
-                    </div>`
-    }
-    questionhtml += `<div class="scorediv"><div id="totalscore" class="scoredisplay"><span id="currentscore">0</span>/${quiztodisplay.questions.length}</div></div>`
-    quizhtml.innerHTML += questionhtml
 }

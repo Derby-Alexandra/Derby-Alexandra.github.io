@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../css/final-project.css">
 </head>
 <body>
-    <header>
-        <h1><a href="final-project.html">QUIZTRIVIALAND</a></h1>
+    <header class="backgroundanimation">
+        <h1><a href="final-project.html" class="textanimation">QUIZTRIVIALAND</a></h1>
     </header>
     <main>
         <h2>Test Your Knowledge with Our Trivia Quizzes or Create Your Own Quiz!</h2>
@@ -40,9 +40,11 @@
                 </div>
                 
             </div>
-            <button type="button" onclick="addquestion()" id="hiddenbutton1">Add Question</button>
-            <br>
-            <button type="button" onclick="createnewquiz()"  id="hiddenbutton2">Submit Quiz</button>
+            <div id="hiddenbuttons" class="hiddenbuttons">
+                <button type="button" onclick="addquestion()" id="hiddenbutton1">Add Question</button>
+                <br>
+                <button type="button" onclick="createnewquiz()"  id="hiddenbutton2">Submit Quiz</button>
+            </div>
             <div id="generatequizparagraph">
                 Choose your quiz category:<br>
                 <button type="button" onclick="displaythequiz('General Knowledge')">General Knowledge</button>

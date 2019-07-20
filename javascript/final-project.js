@@ -195,7 +195,7 @@ function displaycustomquizzes() {
 }
 displaycustomquizzes()
 
-// retrieves data from the general knowledge quiz API using an AJAX request and returns it as an object
+// retrieves data from the quiz API using an AJAX request and returns it as an object
 function quizapiconnection(categoryname) {
     var url = ""
     switch (categoryname) {
